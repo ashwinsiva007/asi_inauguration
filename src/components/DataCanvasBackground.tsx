@@ -14,8 +14,6 @@ interface NodeParticle {
   radius: number;
   color: string;
   alpha: number;
-  targetX?: number;
-  targetY?: number;
 }
 
 interface Ripple {
@@ -37,7 +35,6 @@ export const DataCanvasBackground: React.FC<Props> = ({ stage, touchRipple }) =>
     stageRef.current = stage;
   }, [stage]);
 
-  // Handle incoming touch ripple triggers
   useEffect(() => {
     if (touchRipple) {
       ripplesRef.current.push({
@@ -46,7 +43,7 @@ export const DataCanvasBackground: React.FC<Props> = ({ stage, touchRipple }) =>
         radius: 10,
         maxRadius: Math.max(window.innerWidth, window.innerHeight) * 0.6,
         alpha: 0.9,
-        color: stage === 'COUNTDOWN' ? '#00F0FF' : '#E2B857',
+        color: stage === 'COUNTDOWN' ? '#E5232A' : '#E2B857',
       });
     }
   }, [touchRipple, stage]);
@@ -67,20 +64,21 @@ export const DataCanvasBackground: React.FC<Props> = ({ stage, touchRipple }) =>
     };
 
     const initParticles = () => {
-      const count = Math.floor((canvas.width * canvas.height) / 18000);
+      const count = Math.floor((canvas.width * canvas.height) / 20000);
       const particles: NodeParticle[] = [];
 
-      const colors = ['#D4AF37', '#00F0FF', '#70A1FF', '#E2B857', '#FFFFFF'];
+      // Refined Institutional Palette: ASI Crimson, Gold, Silver, White
+      const colors = ['#E5232A', '#D4AF37', '#E2B857', '#94A3B8', '#FFFFFF'];
 
       for (let i = 0; i < count; i++) {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.6,
-          vy: (Math.random() - 0.5) * 0.6,
-          radius: Math.random() * 1.8 + 0.8,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          radius: Math.random() * 1.6 + 0.8,
           color: colors[Math.floor(Math.random() * colors.length)],
-          alpha: Math.random() * 0.5 + 0.3,
+          alpha: Math.random() * 0.4 + 0.25,
         });
       }
       particlesRef.current = particles;
@@ -97,54 +95,37 @@ export const DataCanvasBackground: React.FC<Props> = ({ stage, touchRipple }) =>
       const centerX = width / 2;
       const centerY = height / 2;
 
-      // Dark background gradient
+      // Dark Luxury Institutional Background Gradient
       const bgGrad = ctx.createRadialGradient(
         centerX,
         centerY,
         0,
         centerX,
         centerY,
-        Math.max(width, height) * 0.8
+        Math.max(width, height) * 0.85
       );
 
       if (stageRef.current === 'INAUGURATED') {
-        bgGrad.addColorStop(0, '#0B1528');
-        bgGrad.addColorStop(0.5, '#070D18');
-        bgGrad.addColorStop(1, '#030509');
+        bgGrad.addColorStop(0, '#121829');
+        bgGrad.addColorStop(0.5, '#0B0F1A');
+        bgGrad.addColorStop(1, '#05070D');
       } else if (stageRef.current === 'COUNTDOWN') {
-        bgGrad.addColorStop(0, '#0E1A30');
-        bgGrad.addColorStop(0.6, '#080E1A');
-        bgGrad.addColorStop(1, '#04070C');
+        bgGrad.addColorStop(0, '#1A0D12');
+        bgGrad.addColorStop(0.6, '#0F0910');
+        bgGrad.addColorStop(1, '#050408');
       } else {
-        bgGrad.addColorStop(0, '#091120');
-        bgGrad.addColorStop(0.7, '#060B14');
-        bgGrad.addColorStop(1, '#030508');
+        bgGrad.addColorStop(0, '#0E1322');
+        bgGrad.addColorStop(0.7, '#080C16');
+        bgGrad.addColorStop(1, '#04060B');
       }
 
       ctx.fillStyle = bgGrad;
       ctx.fillRect(0, 0, width, height);
 
-      // Render subtle tech grid lines
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.02)';
-      ctx.lineWidth = 1;
-      const gridSize = 80;
-      for (let x = 0; x < width; x += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, height);
-        ctx.stroke();
-      }
-      for (let y = 0; y < height; y += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(width, y);
-        ctx.stroke();
-      }
-
       const particles = particlesRef.current;
 
-      // Draw connection lines between nearby particles
-      const maxDistance = 130;
+      // Draw subtle connection lines between nearby particles
+      const maxDistance = 120;
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
@@ -152,7 +133,7 @@ export const DataCanvasBackground: React.FC<Props> = ({ stage, touchRipple }) =>
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < maxDistance) {
-            const lineAlpha = (1 - dist / maxDistance) * 0.15;
+            const lineAlpha = (1 - dist / maxDistance) * 0.12;
             ctx.strokeStyle = `rgba(226, 184, 87, ${lineAlpha})`;
             ctx.lineWidth = 0.8;
             ctx.beginPath();
@@ -163,7 +144,7 @@ export const DataCanvasBackground: React.FC<Props> = ({ stage, touchRipple }) =>
         }
       }
 
-      // Update and draw particles
+      // Update and render particle nodes
       particles.forEach((p) => {
         if (stageRef.current === 'COUNTDOWN') {
           // Accelerate toward center during countdown
@@ -175,15 +156,15 @@ export const DataCanvasBackground: React.FC<Props> = ({ stage, touchRipple }) =>
           // Orbit around central emblem
           const dx = p.x - centerX;
           const dy = p.y - centerY;
-          const angle = Math.atan2(dy, dx) + 0.005;
+          const angle = Math.atan2(dy, dx) + 0.004;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          const targetDist = 280 + (Math.sin(p.x * 0.01) * 60);
+          const targetDist = 300 + (Math.sin(p.x * 0.01) * 50);
 
           const finalDist = dist + (targetDist - dist) * 0.02;
           p.x = centerX + Math.cos(angle) * finalDist;
           p.y = centerY + Math.sin(angle) * finalDist;
         } else {
-          // Normal ambient movement
+          // Ambient movement
           p.x += p.vx;
           p.y += p.vy;
 
@@ -193,7 +174,6 @@ export const DataCanvasBackground: React.FC<Props> = ({ stage, touchRipple }) =>
           if (p.y > height) p.y = 0;
         }
 
-        // Draw particle node
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = p.color;
@@ -202,7 +182,7 @@ export const DataCanvasBackground: React.FC<Props> = ({ stage, touchRipple }) =>
         ctx.globalAlpha = 1;
       });
 
-      // Update and draw touch ripples
+      // Render touch ripples
       const activeRipples: Ripple[] = [];
       ripplesRef.current.forEach((r) => {
         r.radius += 14;

@@ -2,17 +2,18 @@
 
 @layer base {
   :root {
+    --color-asi-red: #E5232A;
+    --color-asi-red-dark: #C0151C;
     --color-gold-200: #F6E58D;
     --color-gold-300: #F0D362;
     --color-gold-400: #E2B857;
     --color-gold-500: #D4AF37;
-    --color-cyan-400: #00F0FF;
-    --color-slate-950: #04070D;
+    --color-slate-950: #060810;
   }
 
   body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background-color: #04070D;
+    background-color: #060810;
     color: #F8FAFC;
     user-select: none;
     -webkit-user-select: none;
@@ -28,7 +29,11 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Custom Gold Palette Helpers */
+/* Custom ASI Brand Helper Classes */
+.text-asi-red { color: #E5232A; }
+.bg-asi-red { background-color: #E5232A; }
+.border-asi-red { border-color: #E5232A; }
+
 .text-gold-200 { color: #F6E58D; }
 .text-gold-300 { color: #F0D362; }
 .text-gold-400 { color: #E2B857; }
@@ -50,10 +55,10 @@
   animation: fadeIn 0.4s ease-out forwards;
 }
 
-/* Glassmorphism card utilities */
+/* Glassmorphism institutional panel */
 .glass-panel {
-  background: rgba(10, 15, 29, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  background: rgba(12, 16, 28, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 184, 87, 0.25);
 }

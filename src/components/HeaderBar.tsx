@@ -48,40 +48,44 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({ onReset }) => {
   };
 
   return (
-    <header className="relative z-20 w-full h-20 px-8 flex items-center justify-between border-b border-gold-500/20 bg-slate-950/40 backdrop-blur-md">
-      {/* Left Logos & Institution Label */}
-      <div className="flex items-center space-x-4">
-        <div className="flex items-center space-x-3">
+    <header className="relative z-20 w-full h-22 px-8 flex items-center justify-between border-b border-gold-500/20 bg-slate-950/80 backdrop-blur-xl shadow-lg">
+      {/* Left side: Dual Official Logos (ASI + SIET) & Institutional Hierarchy */}
+      <div className="flex items-center space-x-5">
+        <div className="flex items-center space-x-3 bg-white/95 px-3.5 py-1.5 rounded-xl border border-slate-200/40 shadow-sm">
           <img
             src={EVENT_CONFIG.logos.asiLogoPath}
-            alt="ASI Emblem"
-            className="w-11 h-11 object-contain drop-shadow-[0_0_8px_rgba(226,184,87,0.5)]"
-          />
-          <div className="h-8 w-px bg-gold-500/30" />
-          <img
-            src={EVENT_CONFIG.logos.collegeLogoPath}
-            alt="SSIET Emblem"
-            className="w-10 h-10 object-contain drop-shadow-[0_0_8px_rgba(112,161,255,0.4)]"
+            alt="Analytics Society of India Official Logo"
+            className="h-9 w-auto object-contain"
           />
         </div>
-        <div className="hidden md:flex flex-col">
-          <span className="text-xs font-semibold tracking-wider text-slate-300 uppercase">
-            {EVENT_CONFIG.institution}
-          </span>
-          <span className="text-[10px] tracking-widest text-gold-400 font-mono">
-            INAUGURATION CEREMONY • 2026
-          </span>
+
+        <div className="h-9 w-px bg-gold-500/30" />
+
+        <div className="flex items-center space-x-2.5">
+          <img
+            src={EVENT_CONFIG.logos.collegeLogoPath}
+            alt="Sri Shakthi Institute Emblem"
+            className="w-10 h-10 object-contain drop-shadow-[0_0_8px_rgba(112,161,255,0.4)]"
+          />
+          <div className="hidden md:flex flex-col text-left">
+            <span className="text-xs font-bold tracking-wider text-slate-100 uppercase">
+              {EVENT_CONFIG.institution}
+            </span>
+            <span className="text-[10px] tracking-widest text-gold-400 font-mono">
+              ASI STUDENT CHAPTER CEREMONY
+            </span>
+          </div>
         </div>
       </div>
 
       {/* Center: Core Concept Flow Ticker */}
-      <div className="hidden lg:flex items-center space-x-3 px-5 py-1.5 rounded-full bg-slate-900/60 border border-gold-500/30 text-xs font-mono tracking-widest">
+      <div className="hidden lg:flex items-center space-x-3 px-5 py-2 rounded-full bg-slate-900/90 border border-gold-500/30 text-xs font-mono tracking-widest shadow-inner">
         {EVENT_CONFIG.conceptFlow.map((concept, idx) => (
           <React.Fragment key={concept}>
             <span
               className={
                 idx === EVENT_CONFIG.conceptFlow.length - 1
-                  ? 'text-cyan-400 font-bold drop-shadow-[0_0_6px_rgba(0,240,255,0.8)]'
+                  ? 'text-asi-red font-bold drop-shadow-[0_0_8px_rgba(229,35,42,0.8)]'
                   : 'text-slate-300'
               }
             >
@@ -94,9 +98,9 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({ onReset }) => {
         ))}
       </div>
 
-      {/* Right Controls: Clock, Sound, Fullscreen, Hidden Organizer Reset */}
+      {/* Right Controls: Clock, Sound, Fullscreen, Hidden Reset */}
       <div className="flex items-center space-x-4">
-        <div className="hidden sm:block text-xs font-mono tracking-widest text-slate-300 bg-slate-900/80 px-3 py-1.5 rounded border border-slate-800">
+        <div className="hidden sm:block text-xs font-mono tracking-widest text-slate-300 bg-slate-900/90 px-3.5 py-2 rounded-lg border border-slate-800">
           {time || '10:00:00 AM'}
         </div>
 
@@ -104,7 +108,7 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({ onReset }) => {
         <button
           onClick={handleToggleMute}
           title={isMuted ? 'Unmute Audio' : 'Mute Audio'}
-          className="p-2.5 rounded-lg bg-slate-900/80 border border-slate-700/60 text-slate-300 hover:text-gold-400 hover:border-gold-500/50 transition-colors touch-target"
+          className="p-2.5 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-300 hover:text-gold-400 hover:border-gold-500/50 transition-colors touch-target cursor-pointer"
         >
           {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5 text-gold-400" />}
         </button>
@@ -113,16 +117,16 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({ onReset }) => {
         <button
           onClick={handleToggleFullscreen}
           title="Toggle Smart Board Fullscreen (F11)"
-          className="p-2.5 rounded-lg bg-slate-900/80 border border-slate-700/60 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 transition-colors touch-target"
+          className="p-2.5 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-300 hover:text-gold-400 hover:border-gold-500/50 transition-colors touch-target cursor-pointer"
         >
-          {isFullscreen ? <Minimize className="w-5 h-5" /> : <Maximize className="w-5 h-5 text-cyan-400" />}
+          {isFullscreen ? <Minimize className="w-5 h-5" /> : <Maximize className="w-5 h-5 text-gold-400" />}
         </button>
 
         {/* Discreet Organizer Reset Button */}
         <button
           onClick={onReset}
           title="Organizer Reset (Ctrl + Shift + R)"
-          className="p-2 rounded-lg text-slate-600 hover:text-slate-400 hover:bg-slate-900/50 transition-colors opacity-50 hover:opacity-100"
+          className="p-2 rounded-lg text-slate-600 hover:text-slate-400 hover:bg-slate-900/50 transition-colors opacity-50 hover:opacity-100 cursor-pointer"
         >
           <RefreshCw className="w-4 h-4" />
         </button>
