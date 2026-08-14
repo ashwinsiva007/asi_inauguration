@@ -73,7 +73,7 @@ export const Stage4Reveal: React.FC = () => {
           <img
             src={EVENT_CONFIG.logos.asiStudentChapterEmblemPath || EVENT_CONFIG.logos.collegeLogoPath}
             alt="ASI Student Chapter Official Emblem"
-            className="w-24 h-24 sm:w-28 sm:h-28 object-contain drop-shadow-[0_0_25px_rgba(226,184,87,0.7)]"
+            className="w-40 h-40 sm:w-48 sm:h-48 md:w-52 md:h-52 object-contain drop-shadow-[0_0_40px_rgba(226,184,87,0.9)] hover:scale-105 transition-transform duration-500"
           />
         </motion.div>
 
