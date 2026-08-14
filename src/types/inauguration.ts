@@ -14,6 +14,7 @@ export interface EventConfig {
   logos: {
     asiLogoPath: string;
     collegeLogoPath: string;
+    asiStudentChapterEmblemPath?: string;
   };
   audio: {
     enabledByDefault: boolean;
