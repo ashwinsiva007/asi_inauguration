@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Award, Sparkles, Fingerprint } from 'lucide-react';
+import { Sparkles, Fingerprint } from 'lucide-react';
 import { EVENT_CONFIG } from '../config/eventConfig';
 import { audioEngine } from '../utils/audioEngine';
 
@@ -26,18 +26,12 @@ export const Stage2Confirmation: React.FC<Props> = ({ onConfirm }) => {
       transition={{ duration: 0.5, ease: 'easeOut' }}
       className="relative z-10 flex flex-col justify-center items-center w-full h-[calc(100vh-5.5rem)] px-8 py-4 max-w-5xl mx-auto text-center select-none"
     >
-      {/* Formal Header Badge */}
-      <div className="inline-flex items-center space-x-2 px-5 py-1.5 rounded-full bg-gold-500/15 border border-gold-400/40 text-gold-300 text-xs font-mono tracking-[0.3em] uppercase mb-2 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
-        <Award className="w-4 h-4 text-gold-400" />
-        <span>OFFICIAL CEREMONIAL PROTOCOL</span>
-      </div>
-
       {/* Main Announcement */}
-      <h2 className="text-xl sm:text-2xl font-extrabold tracking-[0.3em] text-slate-200 uppercase mb-3">
+      <h2 className="text-2xl sm:text-3xl font-black tracking-[0.3em] text-slate-100 uppercase mb-4 drop-shadow-md">
         THE MOMENT HAS ARRIVED
       </h2>
 
-      {/* Welcome Chief Guest Invitation Card */}
+      {/* Welcome Chief Guest Card */}
       <div className="my-2 p-6 sm:p-8 rounded-3xl bg-slate-950/90 border border-gold-500/40 backdrop-blur-xl shadow-2xl max-w-3xl w-full relative overflow-hidden">
         {/* Decorative Golden Corner Accents */}
         <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold-400" />
@@ -49,7 +43,7 @@ export const Stage2Confirmation: React.FC<Props> = ({ onConfirm }) => {
           {/* Chief Guest Portrait Frame */}
           {EVENT_CONFIG.chiefGuest.photoPath && (
             <div className="relative group shrink-0">
-              <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-gold-400 via-asi-red to-gold-400 opacity-75 blur-md group-hover:opacity-100 transition duration-500" />
+              <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-gold-400 via-asi-red to-gold-400 opacity-80 blur-md group-hover:opacity-100 transition duration-500" />
               <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full border-4 border-gold-400 p-1 bg-slate-900 shadow-[0_0_30px_rgba(212,175,55,0.6)] overflow-hidden">
                 <img
                   src={EVENT_CONFIG.chiefGuest.photoPath}
@@ -60,35 +54,37 @@ export const Stage2Confirmation: React.FC<Props> = ({ onConfirm }) => {
             </div>
           )}
 
-          {/* Dignitary Info */}
-          <div className="space-y-2.5 flex-1">
+          {/* Dignitary Details */}
+          <div className="space-y-3 flex-1">
             <p className="text-xs sm:text-sm font-mono tracking-[0.3em] text-asi-red font-bold uppercase">
               {EVENT_CONFIG.chiefGuest.title}
             </p>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-gold-200 via-white to-gold-400 drop-shadow-[0_0_20px_rgba(226,184,87,0.4)]">
+            {/* Guest Name: 100% Solid Bright Gold & Crystal Clear Visibility */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-gold-300 tracking-wide drop-shadow-[0_0_20px_rgba(212,175,55,0.7)]">
               {EVENT_CONFIG.chiefGuest.name}
             </h1>
 
-            <p className="text-xs sm:text-sm font-mono tracking-widest text-slate-400">
-              {EVENT_CONFIG.chiefGuest.designation}
-            </p>
-
             <div className="w-full h-px bg-gradient-to-r from-transparent via-gold-500/50 to-transparent my-2" />
 
-            <p className="text-xs sm:text-sm font-light tracking-wide text-slate-200 leading-relaxed">
-              You are invited to officially inaugurate the{' '}
-              <span className="font-bold text-gold-300">
-                Analytics Society of India Student Chapter
-              </span>{' '}
-              at Sri Shakthi Institute of Engineering and Technology.
-            </p>
+            {/* Dr. Dinesh Kumar Designations Summary */}
+            <div className="space-y-1 text-xs sm:text-sm font-medium text-slate-200 tracking-wide leading-snug">
+              <p className="text-gold-300 font-semibold">
+                Chairperson, Data Centre and Analytics Lab
+              </p>
+              <p className="text-slate-300 font-normal">
+                Indian Institute of Management Bangalore
+              </p>
+              <p className="text-asi-red font-semibold pt-0.5">
+                President, Analytics Society of India
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Main Ceremonial Touch Button [ INAUGURATE NOW ] */}
-      <div className="relative group mt-4">
+      <div className="relative group mt-5">
         {/* Animated Radial Pulse Rings */}
         <div className="absolute -inset-6 rounded-3xl bg-gradient-to-r from-gold-400 via-amber-300 to-gold-400 blur-2xl opacity-90 animate-pulse" />
 

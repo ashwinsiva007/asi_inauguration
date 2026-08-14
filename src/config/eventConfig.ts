@@ -13,7 +13,12 @@ export const EVENT_CONFIG: EventConfig = {
   chiefGuest: {
     title: 'WELCOME, CHIEF GUEST',
     name: 'Dr. Dinesh Kumar',
-    designation: 'Chief Guest & Keynote Dignitary',
+    designation: 'Chairperson, Data Centre and Analytics Lab • IIM Bangalore',
+    summaryLines: [
+      'Chairperson, Data Centre and Analytics Lab',
+      'Indian Institute of Management Bangalore',
+      'President, Analytics Society of India',
+    ],
     photoPath: '/assets/chief-guest.jpg',
   },
   eventDate: '24 AUGUST 2026',
