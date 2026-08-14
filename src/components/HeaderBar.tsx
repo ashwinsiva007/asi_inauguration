@@ -49,21 +49,25 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({ onReset }) => {
 
   return (
     <header className="relative z-20 w-full h-22 px-8 flex items-center justify-between border-b border-gold-500/20 bg-slate-950/80 backdrop-blur-xl shadow-lg">
-      {/* Left side: Transparent Official ASI Logo & SIET Emblem */}
-      <div className="flex items-center space-x-6">
-        <img
-          src="/assets/asi-logo-header.png"
-          alt="Analytics Society of India Official Logo"
-          className="h-10 sm:h-12 w-auto object-contain drop-shadow-[0_0_10px_rgba(229,35,42,0.4)]"
-        />
+      {/* Left side: Crystal Clear Official ASI Logo & Real Official SIET College Emblem */}
+      <div className="flex items-center space-x-5">
+        {/* ASI Official Logo Badge - High Contrast & 100% Visible */}
+        <div className="bg-white/95 px-4 py-1.5 rounded-xl border border-slate-200 shadow-md flex items-center justify-center">
+          <img
+            src={EVENT_CONFIG.logos.asiLogoPath}
+            alt="Analytics Society of India Official Logo"
+            className="h-9 sm:h-10 w-auto object-contain"
+          />
+        </div>
 
         <div className="h-9 w-px bg-gold-500/30" />
 
+        {/* Real Official SIET College Emblem */}
         <div className="flex items-center space-x-3">
           <img
             src={EVENT_CONFIG.logos.collegeLogoPath}
-            alt="Sri Shakthi Institute Emblem"
-            className="w-10 h-10 object-contain drop-shadow-[0_0_8px_rgba(112,161,255,0.4)]"
+            alt="Sri Shakthi Institute of Engineering and Technology Emblem"
+            className="h-11 w-auto object-contain drop-shadow-[0_0_10px_rgba(226,184,87,0.5)]"
           />
           <div className="hidden md:flex flex-col text-left">
             <span className="text-xs font-bold tracking-wider text-slate-100 uppercase">

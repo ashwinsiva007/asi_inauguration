@@ -63,7 +63,7 @@ export const Stage4Reveal: React.FC = () => {
         <div className="absolute bottom-3 left-3 w-10 h-10 border-b-2 border-l-2 border-gold-400" />
         <div className="absolute bottom-3 right-3 w-10 h-10 border-b-2 border-r-2 border-gold-400" />
 
-        {/* Institution Emblem */}
+        {/* Real Official SIET College Emblem */}
         <motion.div
           initial={{ opacity: 0, y: -15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,8 +72,8 @@ export const Stage4Reveal: React.FC = () => {
         >
           <img
             src={EVENT_CONFIG.logos.collegeLogoPath}
-            alt="Sri Shakthi Institute Emblem"
-            className="w-16 h-16 sm:w-20 sm:h-20 object-contain drop-shadow-[0_0_15px_rgba(112,161,255,0.5)]"
+            alt="Sri Shakthi Institute of Engineering and Technology Emblem"
+            className="w-20 h-20 sm:w-24 sm:h-24 object-contain drop-shadow-[0_0_20px_rgba(226,184,87,0.6)]"
           />
         </motion.div>
 

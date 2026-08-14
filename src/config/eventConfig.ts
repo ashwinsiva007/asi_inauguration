@@ -18,9 +18,9 @@ export const EVENT_CONFIG: EventConfig = {
   eventDate: '24 AUGUST 2026',
   conceptFlow: ['DATA', 'ANALYTICS', 'INSIGHT', 'IMPACT'],
   logos: {
-    // Official ASI PNG logo provided by user + SIET Emblem
+    // Official ASI PNG logo + Real Official SIET College Emblem PNG
     asiLogoPath: '/assets/asi-logo.png',
-    collegeLogoPath: '/assets/college-logo.svg',
+    collegeLogoPath: '/assets/college-logo.png',
   },
   audio: {
     enabledByDefault: true,
