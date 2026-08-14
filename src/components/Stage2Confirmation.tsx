@@ -46,21 +46,6 @@ export const Stage2Confirmation: React.FC<Props> = ({ onConfirm }) => {
         <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-gold-400" />
 
         <div className="space-y-4">
-          {/* Official ASI Brand Header */}
-          <div className="flex items-center justify-center space-x-3 mb-2">
-            <div className="bg-white/95 px-4 py-1.5 rounded-xl border border-slate-200 shadow-sm">
-              <img
-                src={EVENT_CONFIG.logos.asiLogoPath}
-                alt="ASI Official Logo"
-                className="h-9 w-auto object-contain"
-              />
-            </div>
-            <span className="text-gold-400/50">•</span>
-            <span className="text-xs font-mono tracking-widest text-slate-300 font-semibold">
-              SIET CHAPTER
-            </span>
-          </div>
-
           <p className="text-xs sm:text-sm font-mono tracking-[0.3em] text-asi-red font-bold uppercase">
             {EVENT_CONFIG.chiefGuest.title}
           </p>
@@ -77,7 +62,7 @@ export const Stage2Confirmation: React.FC<Props> = ({ onConfirm }) => {
 
           <p className="text-sm sm:text-base font-light tracking-wide text-slate-200 leading-relaxed max-w-xl mx-auto">
             You are invited to officially inaugurate the{' '}
-            <span className="font-bold text-asi-red">
+            <span className="font-bold text-gold-300">
               Analytics Society of India Student Chapter
             </span>{' '}
             at Sri Shakthi Institute of Engineering and Technology.
@@ -85,27 +70,27 @@ export const Stage2Confirmation: React.FC<Props> = ({ onConfirm }) => {
         </div>
       </div>
 
-      {/* Main Ceremonial Touch Button [ INAUGURATE NOW ] */}
-      <div className="relative group mt-4">
+      {/* Main Ceremonial Touch Button [ INAUGURATE NOW ] - Extremely Prominent & High Contrast */}
+      <div className="relative group mt-6">
         {/* Animated Radial Pulse Rings */}
-        <div className="absolute -inset-6 rounded-full bg-gradient-to-r from-asi-red/40 via-gold-400/50 to-asi-red/40 blur-2xl opacity-80 animate-pulse" />
+        <div className="absolute -inset-6 rounded-3xl bg-gradient-to-r from-gold-400 via-amber-300 to-gold-400 blur-2xl opacity-90 animate-pulse" />
 
         <button
           onClick={handleClick}
           onTouchStart={handleClick}
           disabled={isPressed}
-          className="relative flex items-center justify-center space-x-4 px-14 py-8 sm:px-20 sm:py-9 rounded-2xl bg-gradient-to-r from-asi-red via-gold-500 to-asi-red text-slate-950 font-black border-2 border-gold-200 shadow-[0_0_50px_rgba(229,35,42,0.6)] hover:shadow-[0_0_80px_rgba(229,35,42,0.9)] transition-all duration-300 active:scale-95 cursor-pointer touch-target"
+          className="relative flex items-center justify-center space-x-4 px-16 py-8 sm:px-24 sm:py-9 rounded-2xl bg-gradient-to-r from-gold-300 via-amber-200 to-gold-400 text-slate-950 font-black border-2 border-white shadow-[0_0_60px_rgba(226,184,87,0.9)] hover:shadow-[0_0_90px_rgba(255,215,0,1)] transition-all duration-300 active:scale-95 cursor-pointer touch-target"
         >
-          <Fingerprint className="w-8 h-8 text-slate-950 animate-bounce" />
-          <span className="text-2xl sm:text-3xl font-black tracking-[0.25em] uppercase">
+          <Fingerprint className="w-9 h-9 text-slate-950 animate-bounce" />
+          <span className="text-2xl sm:text-3xl font-black tracking-[0.25em] text-slate-950 uppercase">
             INAUGURATE NOW
           </span>
-          <Sparkles className="w-7 h-7 text-slate-950" />
+          <Sparkles className="w-8 h-8 text-slate-950" />
         </button>
       </div>
 
-      <p className="text-xs font-mono tracking-[0.2em] text-gold-400 uppercase mt-5 flex items-center space-x-2">
-        <span className="w-2 h-2 rounded-full bg-asi-red animate-ping" />
+      <p className="text-xs font-mono tracking-[0.2em] text-gold-400 uppercase mt-6 flex items-center space-x-2">
+        <span className="w-2 h-2 rounded-full bg-gold-400 animate-ping" />
         <span>Chief Guest Touch Interaction Required</span>
       </p>
     </motion.div>

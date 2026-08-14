@@ -63,25 +63,17 @@ export const Stage4Reveal: React.FC = () => {
         <div className="absolute bottom-3 left-3 w-10 h-10 border-b-2 border-l-2 border-gold-400" />
         <div className="absolute bottom-3 right-3 w-10 h-10 border-b-2 border-r-2 border-gold-400" />
 
-        {/* Official ASI & SIET Dual Logos */}
+        {/* Institution Emblem */}
         <motion.div
           initial={{ opacity: 0, y: -15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex items-center justify-center space-x-6 mb-6"
+          className="flex items-center justify-center space-x-3 mb-6"
         >
-          <div className="bg-white/95 px-5 py-2.5 rounded-2xl border-2 border-gold-500/40 shadow-md">
-            <img
-              src={EVENT_CONFIG.logos.asiLogoPath}
-              alt="Analytics Society of India Official Logo"
-              className="h-12 sm:h-16 w-auto object-contain"
-            />
-          </div>
-          <div className="h-12 w-px bg-gold-500/40" />
           <img
             src={EVENT_CONFIG.logos.collegeLogoPath}
             alt="Sri Shakthi Institute Emblem"
-            className="w-14 h-14 sm:w-16 sm:h-16 object-contain drop-shadow-[0_0_15px_rgba(112,161,255,0.5)]"
+            className="w-16 h-16 sm:w-20 sm:h-20 object-contain drop-shadow-[0_0_15px_rgba(112,161,255,0.5)]"
           />
         </motion.div>
 
@@ -106,7 +98,7 @@ export const Stage4Reveal: React.FC = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.9 }}
-          className="my-5 px-8 py-3 rounded-full bg-gradient-to-r from-asi-red/20 via-gold-400/30 to-asi-red/20 border-2 border-gold-400 shadow-[0_0_35px_rgba(226,184,87,0.4)]"
+          className="my-6 px-8 py-3.5 rounded-full bg-gradient-to-r from-asi-red/20 via-gold-400/30 to-asi-red/20 border-2 border-gold-400 shadow-[0_0_35px_rgba(226,184,87,0.4)]"
         >
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-[0.3em] text-gold-300 uppercase drop-shadow-[0_0_15px_rgba(226,184,87,0.8)]">
             OFFICIALLY INAUGURATED
@@ -139,7 +131,7 @@ export const Stage4Reveal: React.FC = () => {
           </div>
         </motion.div>
 
-        <div className="w-48 h-px bg-gradient-to-r from-transparent via-gold-500/50 to-transparent my-5" />
+        <div className="w-48 h-px bg-gradient-to-r from-transparent via-gold-500/50 to-transparent my-6" />
 
         {/* Final Motto Line */}
         <motion.div

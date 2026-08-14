@@ -49,19 +49,17 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({ onReset }) => {
 
   return (
     <header className="relative z-20 w-full h-22 px-8 flex items-center justify-between border-b border-gold-500/20 bg-slate-950/80 backdrop-blur-xl shadow-lg">
-      {/* Left side: Dual Official Logos (ASI + SIET) & Institutional Hierarchy */}
-      <div className="flex items-center space-x-5">
-        <div className="flex items-center space-x-3 bg-white/95 px-3.5 py-1.5 rounded-xl border border-slate-200/40 shadow-sm">
-          <img
-            src={EVENT_CONFIG.logos.asiLogoPath}
-            alt="Analytics Society of India Official Logo"
-            className="h-9 w-auto object-contain"
-          />
-        </div>
+      {/* Left side: Transparent Official ASI Logo & SIET Emblem */}
+      <div className="flex items-center space-x-6">
+        <img
+          src="/assets/asi-logo-header.png"
+          alt="Analytics Society of India Official Logo"
+          className="h-10 sm:h-12 w-auto object-contain drop-shadow-[0_0_10px_rgba(229,35,42,0.4)]"
+        />
 
         <div className="h-9 w-px bg-gold-500/30" />
 
-        <div className="flex items-center space-x-2.5">
+        <div className="flex items-center space-x-3">
           <img
             src={EVENT_CONFIG.logos.collegeLogoPath}
             alt="Sri Shakthi Institute Emblem"
