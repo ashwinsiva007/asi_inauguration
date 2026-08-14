@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="collegeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#70A1FF" />
+      <stop offset="100%" stop-color="#E2B857" />
+    </linearGradient>
+  </defs>
+
+  <!-- Institutional Shield outline -->
+  <path d="M 100,20 C 150,20 175,40 175,85 C 175,140 125,175 100,188 C 75,175 25,140 25,85 C 25,40 50,20 100,20 Z" fill="none" stroke="url(#collegeGrad)" stroke-width="3"/>
+
+  <!-- Academic Torch / Gear Emblem -->
+  <circle cx="100" cy="85" r="30" fill="none" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1.5"/>
+  <path d="M 100,55 L 100,115 M 70,85 L 130,85" stroke="rgba(226, 184, 87, 0.6)" stroke-width="1.5"/>
+
+  <!-- Book / Knowledge Symbol -->
+  <path d="M 75,100 Q 100,90 100,115 Q 100,90 125,100 L 125,115 Q 100,105 100,125 Q 100,105 75,115 Z" fill="#E2B857" opacity="0.9"/>
+
+  <!-- SSIET Letters -->
+  <text x="100" y="152" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="13" fill="#FFFFFF" letter-spacing="2">SSIET</text>
+</svg>
