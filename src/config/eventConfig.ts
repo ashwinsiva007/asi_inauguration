@@ -14,6 +14,7 @@ export const EVENT_CONFIG: EventConfig = {
     title: 'WELCOME, CHIEF GUEST',
     name: 'Dr. Dinesh Kumar',
     designation: 'Chief Guest & Keynote Dignitary',
+    photoPath: '/assets/chief-guest.jpg',
   },
   eventDate: '24 AUGUST 2026',
   conceptFlow: ['DATA', 'ANALYTICS', 'INSIGHT', 'IMPACT'],

@@ -8,6 +8,7 @@ export interface EventConfig {
     title: string;
     name: string;
     designation?: string;
+    photoPath?: string;
   };
   eventDate: string;
   conceptFlow: string[];
