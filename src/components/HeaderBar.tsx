@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Volume2, VolumeX, Maximize, Minimize, RefreshCw } from 'lucide-react';
 import { EVENT_CONFIG } from '../config/eventConfig';
 import { audioEngine } from '../utils/audioEngine';
@@ -9,26 +9,8 @@ interface HeaderBarProps {
 }
 
 export const HeaderBar: React.FC<HeaderBarProps> = ({ onReset }) => {
-  const [time, setTime] = useState<string>('');
   const [isMuted, setIsMuted] = useState<boolean>(false);
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
-
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      setTime(
-        now.toLocaleTimeString('en-US', {
-          hour12: true,
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-        })
-      );
-    };
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
-  }, []);
 
   const handleToggleMute = () => {
     const muted = audioEngine.toggleMute();
@@ -100,11 +82,8 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({ onReset }) => {
         ))}
       </div>
 
-      {/* Right Controls: Clock, Sound, Fullscreen, Hidden Reset */}
+      {/* Right Controls: Sound, Fullscreen, Hidden Reset */}
       <div className="flex items-center space-x-4">
-        <div className="hidden sm:block text-xs font-mono tracking-widest text-slate-300 bg-slate-900/90 px-3.5 py-2 rounded-lg border border-slate-800">
-          {time || '10:00:00 AM'}
-        </div>
 
         {/* Audio Toggle */}
         <button
