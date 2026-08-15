@@ -55,8 +55,8 @@ export const Stage2Confirmation: React.FC<Props> = ({ onConfirm }) => {
           )}
 
           {/* Dignitary Details */}
-          <div className="space-y-3 flex-1">
-            <p className="text-xs sm:text-sm font-mono tracking-[0.3em] text-asi-red font-bold uppercase">
+          <div className="space-y-4 flex-1">
+            <p className="text-xs sm:text-sm font-mono tracking-[0.32em] text-[#FF5252] font-black uppercase drop-shadow-[0_0_10px_rgba(255,82,82,0.3)]">
               {EVENT_CONFIG.chiefGuest.title}
             </p>
 
@@ -68,15 +68,15 @@ export const Stage2Confirmation: React.FC<Props> = ({ onConfirm }) => {
             <div className="w-full h-px bg-gradient-to-r from-transparent via-gold-500/50 to-transparent my-2" />
 
             {/* Dr. Dinesh Kumar Designations Summary */}
-            <div className="space-y-1 text-xs sm:text-sm font-medium text-slate-200 tracking-wide leading-snug">
-              <p className="text-gold-300 font-semibold">
-                Chairperson, Data Centre and Analytics Lab
+            <div className="space-y-2 text-slate-200 tracking-wide leading-snug">
+              <p className="text-[#FF5252] font-bold text-sm sm:text-base drop-shadow-[0_0_8px_rgba(255,82,82,0.25)]">
+                President of Analytics Society of India
               </p>
-              <p className="text-slate-300 font-normal">
+              <p className="text-gold-300 font-bold text-sm sm:text-base pt-0.5">
+                Chairperson, Data Centre and Analytics Lab (DCAL)
+              </p>
+              <p className="text-slate-300 font-normal text-xs sm:text-sm">
                 Indian Institute of Management Bangalore
-              </p>
-              <p className="text-asi-red font-semibold pt-0.5">
-                President, Analytics Society of India
               </p>
             </div>
           </div>
@@ -101,11 +101,6 @@ export const Stage2Confirmation: React.FC<Props> = ({ onConfirm }) => {
           <Sparkles className="w-7 h-7 text-slate-950" />
         </button>
       </div>
-
-      <p className="text-xs font-mono tracking-[0.2em] text-gold-400 uppercase mt-4 flex items-center space-x-2">
-        <span className="w-2 h-2 rounded-full bg-gold-400 animate-ping" />
-        <span>Chief Guest Touch Interaction Required</span>
-      </p>
     </motion.div>
   );
 };

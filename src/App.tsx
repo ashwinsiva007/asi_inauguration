@@ -8,6 +8,7 @@ import { Stage2Confirmation } from './components/Stage2Confirmation';
 import { Stage3Countdown } from './components/Stage3Countdown';
 import { Stage4Reveal } from './components/Stage4Reveal';
 import { OrganizerControls } from './components/OrganizerControls';
+import { ExploreMode } from './components/ExploreMode';
 
 export function App() {
   const [stage, setStage] = useState<InaugurationStage>('READY');
@@ -53,13 +54,17 @@ export function App() {
       <DataCanvasBackground stage={stage} touchRipple={touchRipple} />
 
       {/* Top Header Navigation Bar */}
-      <HeaderBar onReset={handleReset} />
+      {stage !== 'EXPLORE' && <HeaderBar onReset={handleReset} />}
 
       {/* State Machine Main Container */}
       <section className="relative z-10 flex-1 w-full h-full flex flex-col justify-center items-center">
         <AnimatePresence mode="wait">
           {stage === 'READY' && (
-            <Stage1Dashboard key="stage1" onInitiate={handleInitiate} />
+            <Stage1Dashboard key="stage1" onInitiate={handleInitiate} onExplore={() => setStage('EXPLORE')} />
+          )}
+
+          {stage === 'EXPLORE' && (
+            <ExploreMode key="explore" onExit={handleReset} />
           )}
 
           {stage === 'CONFIRMATION' && (

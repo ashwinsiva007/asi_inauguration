@@ -46,6 +46,26 @@ Open [http://localhost:5173](http://localhost:5173) in your web browser (Google 
 
 ---
 
+## 🗺️ Pre-Event Mode: Explore ASI
+
+Before the official inauguration begins (e.g. while participants are entering the hall and taking their seats), organizers can run the **Explore ASI Mode** by clicking the **`[ EXPLORE ASI ]`** button on the Stage 1 home screen.
+
+### Features:
+- **Cinematic Presentation Display**: A continuous 9-scene slideshow presenting:
+  1. Welcome Title Card
+  2. Analytics Society of India (ASI) Introduction
+  3. Vision & Objectives (Data ➔ Knowledge ➔ Insight ➔ Impact)
+  4. Academic Foundation & Affiliation (IIM Bangalore)
+  5. Mentoring Lab (DCAL Lab)
+  6. Student Chapter Details & Local Initiative
+  7. Benefits & Activities (Seminars, Hackathons, Projects, etc.)
+  8. Inauguration Information
+  9. Infinite Loop Transition
+- **Static branding header**: The institutional header stays pinned to the top of the display to maintain official branding context throughout the pre-event.
+- **Presenter & Audio Controls**: Integrated sound controls (mute/unmute) and a quick Exit button. Pressing `Esc` at any point returns the presenter back to the Stage 1 ceremony dashboard.
+
+---
+
 ## 🔒 Organizer Controls & Reset Mechanism
 
 To reset the inauguration back to **Stage 1 (Dashboard)** between rehearsals or runs:

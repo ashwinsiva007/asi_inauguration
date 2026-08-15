@@ -1,0 +1,7 @@
+ASI DIGITAL INAUGURATION — VIDEO ASSETS
+
+Place your official 60-90 second cinematic MP4 video in this folder:
+File name: asi-experience.mp4
+Relative path: /videos/asi-experience.mp4
+
+If this file is missing or has a load error, the website will automatically run a highly-polished HTML/CSS/React animated presentation fallback.

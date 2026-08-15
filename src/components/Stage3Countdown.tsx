@@ -74,9 +74,9 @@ export const Stage3Countdown: React.FC<Props> = ({ onComplete }) => {
         className="mt-8 flex flex-col items-center space-y-2"
       >
         <div className="flex space-x-2.5">
-          <div className={`w-3.5 h-3.5 rounded-full transition-colors duration-300 ${count <= 3 ? 'bg-asi-red shadow-[0_0_10px_#E5232A]' : 'bg-slate-800'}`} />
-          <div className={`w-3.5 h-3.5 rounded-full transition-colors duration-300 ${count <= 2 ? 'bg-gold-400 shadow-[0_0_10px_#E2B857]' : 'bg-slate-800'}`} />
-          <div className={`w-3.5 h-3.5 rounded-full transition-colors duration-300 ${count <= 1 ? 'bg-asi-red shadow-[0_0_10px_#E5232A]' : 'bg-slate-800'}`} />
+          <div className={`w-3.5 h-3.5 rounded-full transition-colors duration-300 ${count <= 3 ? 'bg-[#E5232A] shadow-[0_0_10px_#E5232A]' : 'bg-slate-800'}`} />
+          <div className={`w-3.5 h-3.5 rounded-full transition-colors duration-300 ${count <= 2 ? 'bg-[#E2B857] shadow-[0_0_10px_#E2B857]' : 'bg-slate-800'}`} />
+          <div className={`w-3.5 h-3.5 rounded-full transition-colors duration-300 ${count <= 1 ? 'bg-[#10B981] shadow-[0_0_10px_#10B981]' : 'bg-slate-800'}`} />
         </div>
         <p className="text-[11px] font-mono tracking-widest text-slate-400 uppercase">
           SYNCHRONIZING INAUGURAL CEREMONY...

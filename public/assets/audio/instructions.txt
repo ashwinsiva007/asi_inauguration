@@ -1,0 +1,7 @@
+ASI DIGITAL INAUGURATION — AUDIO ASSETS
+
+Place your background soundtrack in this folder:
+File name: explore-ambient.mp3
+Relative path: /assets/audio/explore-ambient.mp3
+
+This soundtrack will be played in the background of the fallback presentation mode.
