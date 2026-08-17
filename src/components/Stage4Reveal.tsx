@@ -116,12 +116,12 @@ export const Stage4Reveal: React.FC = () => {
             by
           </p>
 
-          <h4 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-wide text-gold-300 drop-shadow-[0_0_20px_rgba(212,175,55,0.7)]">
+          <h4 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-wide text-white">
             {EVENT_CONFIG.chiefGuest.name}
           </h4>
 
-          <div className="flex items-center justify-center space-x-2 text-sm sm:text-base font-extrabold text-slate-100 tracking-wider pt-2">
-            <Award className="w-5 h-5 text-gold-400" />
+          <div className="flex items-center justify-center space-x-2 text-sm sm:text-base font-extrabold text-amber-400 tracking-wider pt-2">
+            <Award className="w-5 h-5 text-amber-400" />
             <span>PRESIDENT OF ANALYTICS SOCIETY OF INDIA</span>
           </div>
 
