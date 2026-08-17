@@ -98,9 +98,9 @@ export const Stage4Reveal: React.FC = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.9 }}
-          className="my-4 px-8 py-2.5 rounded-full bg-gradient-to-r from-asi-red/20 via-gold-400/30 to-asi-red/20 border-2 border-gold-400 shadow-[0_0_35px_rgba(226,184,87,0.4)]"
+          className="my-4 px-8 py-2.5 rounded-full bg-gradient-to-r from-cyan-950/50 via-cyan-400/30 to-blue-950/50 border-2 border-cyan-400 shadow-[0_0_40px_rgba(6,182,212,0.45)]"
         >
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-[0.3em] text-gold-300 uppercase drop-shadow-[0_0_15px_rgba(226,184,87,0.8)]">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-[0.3em] text-cyan-300 uppercase drop-shadow-[0_0_15px_rgba(6,182,212,0.8)]">
             OFFICIALLY INAUGURATED
           </h1>
         </motion.div>
@@ -121,17 +121,17 @@ export const Stage4Reveal: React.FC = () => {
           </h4>
 
           <div className="flex items-center justify-center space-x-2 text-sm sm:text-base font-extrabold text-slate-100 tracking-wider pt-2">
-            <Award className="w-5 h-5 text-gold-400" />
+            <Award className="w-5 h-5 text-cyan-400" />
             <span>PRESIDENT OF ANALYTICS SOCIETY OF INDIA</span>
           </div>
 
           <div className="flex items-center justify-center space-x-2 text-xs sm:text-sm font-bold text-slate-300 tracking-widest pt-2">
-            <Calendar className="w-4 h-4 text-gold-400" />
+            <Calendar className="w-4 h-4 text-cyan-400" />
             <span>{EVENT_CONFIG.eventDate}</span>
           </div>
         </motion.div>
 
-        <div className="w-48 h-px bg-gradient-to-r from-transparent via-gold-500/50 to-transparent my-4" />
+        <div className="w-48 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent my-4" />
 
         {/* Final Motto Line */}
         <motion.div

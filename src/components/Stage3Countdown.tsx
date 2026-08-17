@@ -37,13 +37,13 @@ export const Stage3Countdown: React.FC<Props> = ({ onComplete }) => {
     <div className="relative z-10 flex flex-col justify-center items-center w-full h-[calc(100vh-5.5rem)] px-8 select-none overflow-hidden">
       {/* Expanding Ceremonial Gold & Crimson Aura Rings */}
       <div className="absolute w-[400px] h-[400px] sm:w-[520px] sm:h-[520px] rounded-full border border-asi-red/40 animate-ping opacity-30 pointer-events-none" />
-      <div className="absolute w-[300px] h-[300px] sm:w-[390px] sm:h-[390px] rounded-full border-2 border-gold-400/50 animate-pulse pointer-events-none" />
+      <div className="absolute w-[300px] h-[300px] sm:w-[390px] sm:h-[390px] rounded-full border-2 border-cyan-400/50 animate-pulse pointer-events-none" />
 
       {/* Stage Title */}
       <motion.p
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-xs sm:text-sm font-mono tracking-[0.4em] text-gold-400 uppercase mb-8"
+        className="text-xs sm:text-sm font-mono tracking-[0.4em] text-cyan-400 uppercase mb-8"
       >
         INITIATING OFFICIAL CHAPTER LAUNCH
       </motion.p>
@@ -59,7 +59,7 @@ export const Stage3Countdown: React.FC<Props> = ({ onComplete }) => {
             transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
             className="flex items-center justify-center"
           >
-            <span className="text-8xl sm:text-9xl md:text-[13rem] font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white via-gold-200 to-asi-red drop-shadow-[0_0_60px_rgba(229,35,42,0.8)] font-sans">
+            <span className="text-8xl sm:text-9xl md:text-[13rem] font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white via-cyan-200 to-asi-red drop-shadow-[0_0_60px_rgba(6,182,212,0.85)] font-sans">
               {count}
             </span>
           </motion.div>

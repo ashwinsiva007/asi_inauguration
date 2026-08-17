@@ -88,7 +88,7 @@ export const ExploreMode: React.FC<ExploreModeProps> = ({ onExit }) => {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                className="absolute inset-0 rounded-full border-2 border-dashed border-gold-500/20"
+                className="absolute inset-0 rounded-full border-2 border-dashed border-cyber-cyan/20"
               />
               <motion.div
                 animate={{ rotate: -360 }}
@@ -97,11 +97,11 @@ export const ExploreMode: React.FC<ExploreModeProps> = ({ onExit }) => {
               />
               {/* Core glowing badge */}
               <motion.div
-                animate={{ scale: [1, 1.08, 1], boxShadow: ['0 0 20px rgba(212,175,55,0.15)', '0 0 45px rgba(212,175,55,0.4)', '0 0 20px rgba(212,175,55,0.15)'] }}
+                animate={{ scale: [1, 1.08, 1], boxShadow: ['0 0 20px rgba(6,182,212,0.15)', '0 0 45px rgba(6,182,212,0.4)', '0 0 20px rgba(6,182,212,0.15)'] }}
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                className="w-24 h-24 rounded-full bg-slate-900 border-2 border-gold-400 flex items-center justify-center shadow-[0_0_50px_rgba(212,175,55,0.25)]"
+                className="w-24 h-24 rounded-full bg-slate-900 border-2 border-cyan-400 flex items-center justify-center shadow-[0_0_50px_rgba(6,182,212,0.25)]"
               >
-                <Award className="w-12 h-12 text-gold-400" />
+                <Award className="w-12 h-12 text-cyan-400" />
               </motion.div>
             </div>
             <h1 className="text-4xl sm:text-6xl font-black tracking-wider text-white leading-tight drop-shadow-lg uppercase">
@@ -123,11 +123,11 @@ export const ExploreMode: React.FC<ExploreModeProps> = ({ onExit }) => {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-center max-w-3xl text-center space-y-6"
           >
-            <span className="text-xs font-mono tracking-[0.4em] text-gold-400 uppercase">INTRODUCTION</span>
+            <span className="text-xs font-mono tracking-[0.4em] text-cyan-400 uppercase">INTRODUCTION</span>
             <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white uppercase">
               {scenes.scene2WhatIsASI.title}
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-gold-500 to-asi-red" />
+            <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-asi-red" />
             <p className="text-lg sm:text-xl text-slate-300 leading-relaxed font-sans px-4">
               {scenes.scene2WhatIsASI.description}
             </p>
@@ -144,7 +144,7 @@ export const ExploreMode: React.FC<ExploreModeProps> = ({ onExit }) => {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-center max-w-4xl text-center space-y-8"
           >
-            <span className="text-xs font-mono tracking-[0.4em] text-gold-400 uppercase">MISSION & STRATEGY</span>
+            <span className="text-xs font-mono tracking-[0.4em] text-cyan-400 uppercase">MISSION & STRATEGY</span>
             <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white uppercase">
               {scenes.scene3Vision.title}
             </h2>
@@ -162,8 +162,8 @@ export const ExploreMode: React.FC<ExploreModeProps> = ({ onExit }) => {
                     }}
                     className="px-8 py-4 rounded-xl border text-sm font-mono font-bold tracking-widest bg-slate-950/90 shadow-[0_4px_20px_rgba(0,0,0,0.4)] flex flex-col items-center space-y-1.5"
                     style={{
-                      borderColor: idx === scenes.scene3Vision.steps.length - 1 ? '#E5232A' : 'rgba(226,184,87,0.3)',
-                      color: idx === scenes.scene3Vision.steps.length - 1 ? '#E5232A' : '#E2B857',
+                      borderColor: idx === scenes.scene3Vision.steps.length - 1 ? '#E5232A' : 'rgba(6,182,212,0.4)',
+                      color: idx === scenes.scene3Vision.steps.length - 1 ? '#E5232A' : '#06B6D4',
                       boxShadow: idx === scenes.scene3Vision.steps.length - 1 ? '0 0 20px rgba(229,35,42,0.25)' : 'none',
                     }}
                   >
@@ -193,11 +193,11 @@ export const ExploreMode: React.FC<ExploreModeProps> = ({ onExit }) => {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-center max-w-3xl text-center space-y-6"
           >
-            <span className="text-xs font-mono tracking-[0.4em] text-gold-400 uppercase">ACADEMIC FOUNDATION</span>
+            <span className="text-xs font-mono tracking-[0.4em] text-cyan-400 uppercase">ACADEMIC FOUNDATION</span>
             <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white uppercase leading-tight">
               {scenes.scene4IIMB.title}
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-gold-500 to-asi-red" />
+            <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-asi-red" />
             <p className="text-lg sm:text-xl text-slate-300 leading-relaxed font-sans px-4">
               {scenes.scene4IIMB.description}
             </p>
@@ -214,14 +214,14 @@ export const ExploreMode: React.FC<ExploreModeProps> = ({ onExit }) => {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-center max-w-3xl text-center space-y-6"
           >
-            <span className="text-xs font-mono tracking-[0.4em] text-gold-400 uppercase">MENTORING LAB</span>
+            <span className="text-xs font-mono tracking-[0.4em] text-cyan-400 uppercase">MENTORING LAB</span>
             <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white uppercase">
               {scenes.scene5DCALL.title}
             </h2>
             <p className="text-sm font-mono text-asi-red tracking-[0.25em] font-semibold uppercase">
               {scenes.scene5DCALL.subtitle}
             </p>
-            <div className="w-20 h-1 bg-gradient-to-r from-gold-500 to-asi-red" />
+            <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-asi-red" />
             <p className="text-lg sm:text-xl text-slate-300 leading-relaxed font-sans px-4">
               {scenes.scene5DCALL.description}
             </p>
@@ -238,7 +238,7 @@ export const ExploreMode: React.FC<ExploreModeProps> = ({ onExit }) => {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-center max-w-4xl text-center space-y-6 w-full"
           >
-            <span className="text-xs font-mono tracking-[0.4em] text-gold-400 uppercase">LOCAL INITIATIVE</span>
+            <span className="text-xs font-mono tracking-[0.4em] text-cyan-400 uppercase">LOCAL INITIATIVE</span>
             <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
               {scenes.scene6StudentChapter.title}
             </h2>
@@ -256,10 +256,10 @@ export const ExploreMode: React.FC<ExploreModeProps> = ({ onExit }) => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: idx * 0.15, duration: 0.4 }}
-                    className="p-5 rounded-xl border border-slate-800/80 bg-slate-900/60 backdrop-blur flex flex-col items-center space-y-3 shadow-lg hover:border-gold-500/40 transition-colors"
+                    className="p-5 rounded-xl border border-slate-800/80 bg-slate-900/60 backdrop-blur flex flex-col items-center space-y-3 shadow-lg hover:border-cyan-500/40 transition-colors"
                   >
                     <div className="w-10 h-10 rounded-lg bg-slate-950 border border-slate-800 flex items-center justify-center">
-                      <IconComponent className="w-5 h-5 text-gold-400" />
+                      <IconComponent className="w-5 h-5 text-cyan-400" />
                     </div>
                     <div className="text-center">
                       <span className="block text-[9px] font-mono text-slate-500 uppercase tracking-widest mb-0.5">PILLAR 0{idx + 1}</span>
@@ -282,7 +282,7 @@ export const ExploreMode: React.FC<ExploreModeProps> = ({ onExit }) => {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-center max-w-5xl text-center space-y-6 w-full"
           >
-            <span className="text-xs font-mono tracking-[0.4em] text-gold-400 uppercase">BENEFITS & EVENTS</span>
+            <span className="text-xs font-mono tracking-[0.4em] text-cyan-400 uppercase">BENEFITS & EVENTS</span>
             <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase mb-2">
               {scenes.scene7Expectations.title}
             </h2>
@@ -297,13 +297,13 @@ export const ExploreMode: React.FC<ExploreModeProps> = ({ onExit }) => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.12, duration: 0.5 }}
-                    className="p-5 rounded-xl border border-slate-800 bg-slate-900/80 hover:border-gold-500/30 transition-colors duration-300 flex flex-col items-start text-left space-y-3"
+                    className="p-5 rounded-xl border border-slate-800 bg-slate-900/80 hover:border-cyan-500/30 transition-colors duration-300 flex flex-col items-start text-left space-y-3"
                   >
                     <div className="w-8 h-8 rounded bg-slate-950 border border-slate-800 flex items-center justify-center">
                       <IconComponent className="w-4 h-4 text-asi-red" />
                     </div>
                     <div>
-                      <span className="block text-[11px] font-mono text-gold-400 uppercase tracking-wider mb-1 font-bold">{activity.title}</span>
+                      <span className="block text-[11px] font-mono text-cyan-400 uppercase tracking-wider mb-1 font-bold">{activity.title}</span>
                       <p className="text-[11px] text-slate-400 leading-relaxed font-sans">{activity.desc}</p>
                     </div>
                   </motion.div>
@@ -323,14 +323,14 @@ export const ExploreMode: React.FC<ExploreModeProps> = ({ onExit }) => {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-center max-w-4xl text-center space-y-6"
           >
-            <span className="text-xs font-mono tracking-[0.4em] text-gold-400 uppercase">OFFICIAL INAUGURATION</span>
+            <span className="text-xs font-mono tracking-[0.4em] text-cyan-400 uppercase">OFFICIAL INAUGURATION</span>
             
             {/* Concentric radar visuals */}
             <div className="relative w-28 h-28 flex items-center justify-center my-2">
               <div className="absolute w-28 h-28 rounded-full border border-asi-red/20 animate-ping" />
-              <div className="absolute w-20 h-20 rounded-full border border-gold-400/30 animate-pulse" />
-              <div className="w-12 h-12 rounded-full bg-slate-900 border-2 border-gold-400 flex items-center justify-center shadow-2xl">
-                <Activity className="w-6 h-6 text-gold-400" />
+              <div className="absolute w-20 h-20 rounded-full border border-cyan-400/30 animate-pulse" />
+              <div className="w-12 h-12 rounded-full bg-slate-900 border-2 border-cyan-400 flex items-center justify-center shadow-2xl">
+                <Activity className="w-6 h-6 text-cyan-400" />
               </div>
             </div>
             
@@ -348,7 +348,7 @@ export const ExploreMode: React.FC<ExploreModeProps> = ({ onExit }) => {
               <p className="text-sm font-mono tracking-widest text-slate-400 uppercase">
                 {scenes.scene8JourneyBegins.tagline}
               </p>
-              <h3 className="text-2xl sm:text-4xl font-mono text-gold-400 font-bold tracking-widest">
+              <h3 className="text-2xl sm:text-4xl font-mono text-cyan-400 font-bold tracking-widest">
                 {scenes.scene8JourneyBegins.date}
               </h3>
               <p className="text-[11px] font-mono tracking-[0.15em] text-slate-500 uppercase">
@@ -377,7 +377,7 @@ export const ExploreMode: React.FC<ExploreModeProps> = ({ onExit }) => {
             <h1 className="text-4xl sm:text-6xl font-black tracking-wider text-white leading-tight uppercase">
               {scenes.scene9Loop.title}
             </h1>
-            <p className="text-xs sm:text-sm font-mono tracking-[0.3em] text-gold-400 uppercase font-bold">
+            <p className="text-xs sm:text-sm font-mono tracking-[0.3em] text-cyan-400 uppercase font-bold">
               {scenes.scene9Loop.subtitle}
             </p>
           </motion.div>
@@ -421,7 +421,7 @@ export const ExploreMode: React.FC<ExploreModeProps> = ({ onExit }) => {
 
         {/* Center: Mode Indicator Badge */}
         <div className="hidden lg:flex items-center space-x-2.5 px-4 py-2 rounded-lg bg-slate-900/90 border border-slate-800/80">
-          <div className="w-2 h-2 rounded-full bg-gold-400 animate-pulse" />
+          <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
           <span className="text-[10px] font-mono text-slate-400 tracking-[0.2em] uppercase font-bold">
             EXPLORE ASI
           </span>
@@ -434,7 +434,7 @@ export const ExploreMode: React.FC<ExploreModeProps> = ({ onExit }) => {
             title={isMuted ? 'Unmute Audio' : 'Mute Audio'}
             className="p-2.5 rounded-lg bg-slate-900/90 border border-slate-700/60 hover:border-gold-500/50 hover:bg-slate-900 transition text-slate-300 cursor-pointer"
           >
-            {isMuted ? <VolumeX className="w-4.5 h-4.5" /> : <Volume2 className="w-4.5 h-4.5 text-gold-400" />}
+            {isMuted ? <VolumeX className="w-4.5 h-4.5" /> : <Volume2 className="w-4.5 h-4.5 text-cyan-400" />}
           </button>
           <button
             onClick={onExit}
@@ -470,7 +470,7 @@ export const ExploreMode: React.FC<ExploreModeProps> = ({ onExit }) => {
           <div className="absolute inset-0 w-full h-full z-20 flex flex-col justify-center items-center px-8 bg-[#060810]">
             {/* Subtle Background Graphics */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-10">
-              <div className="absolute w-[600px] h-[600px] rounded-full border border-gold-500/20 top-1/4 left-1/4 animate-pulse" />
+              <div className="absolute w-[600px] h-[600px] rounded-full border border-cyber-cyan/20 top-1/4 left-1/4 animate-pulse" />
               <div className="absolute w-[400px] h-[400px] rounded-full border border-asi-red/20 bottom-1/4 right-1/4" />
             </div>
 
@@ -485,7 +485,7 @@ export const ExploreMode: React.FC<ExploreModeProps> = ({ onExit }) => {
                 initial={{ width: '0%' }}
                 animate={{ width: '100%' }}
                 transition={{ duration: 8, ease: 'linear' }}
-                className="h-full bg-gold-400 shadow-[0_0_8px_#D4AF37]"
+                className="h-full bg-cyan-400 shadow-[0_0_8px_#06B6D4]"
               />
             </div>
 
@@ -510,7 +510,7 @@ export const ExploreMode: React.FC<ExploreModeProps> = ({ onExit }) => {
         {/* ── VIDEO LOADING PLACEHOLDER ── */}
         {!isVideoLoaded && !videoError && (
           <div className="absolute inset-0 w-full h-full bg-[#060810] z-30 flex flex-col justify-center items-center space-y-4">
-            <div className="w-12 h-12 rounded-full border-4 border-slate-800 border-t-gold-500 animate-spin" />
+            <div className="w-12 h-12 rounded-full border-4 border-slate-800 border-t-cyan-500 animate-spin" />
             <span className="text-xs font-mono text-slate-500 tracking-[0.2em] uppercase animate-pulse">
               LOADING VIDEO PRESENTATION...
             </span>
