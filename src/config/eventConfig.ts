@@ -21,7 +21,7 @@ export const EVENT_CONFIG: EventConfig = {
     ],
     photoPath: '/assets/chief-guest.jpg',
   },
-  eventDate: '24 AUGUST 2026',
+  eventDate: '24th Aug 2026',
   conceptFlow: ['DATA', 'ANALYTICS', 'INSIGHT', 'IMPACT'],
   logos: {
     asiLogoPath: '/assets/asi-logo.png',

@@ -116,7 +116,7 @@ export const EXPLORE_CONFIG: ExploreConfig = {
       title: 'THE JOURNEY BEGINS',
       steps: ['FROM DATA', 'TO INSIGHT', 'TO IMPACT'],
       tagline: 'THE ASI STUDENT CHAPTER BEGINS A NEW JOURNEY',
-      date: '24 AUGUST 2026',
+      date: '24th Aug 2026',
       institution: 'SRI SHAKTHI INSTITUTE OF ENGINEERING AND TECHNOLOGY',
     },
     scene9Loop: {

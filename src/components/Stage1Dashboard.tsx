@@ -10,7 +10,7 @@ interface Props {
 }
 
 const TICKER_ITEMS = [
-  '⚡ ASI Student Chapter Inauguration · 24 AUGUST 2026',
+  '⚡ ASI Student Chapter Inauguration · 24th Aug 2026',
   '📊 Data · Analytics · Insight · Impact',
   '🎓 Sri Shakthi Institute of Engineering and Technology',
   '🌟 Chief Guest: Dr. Dinesh Kumar · IIM Bangalore',
