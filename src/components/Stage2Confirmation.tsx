@@ -43,7 +43,7 @@ export const Stage2Confirmation: React.FC<Props> = ({ onConfirm }) => {
           {/* Chief Guest Portrait Frame */}
           {EVENT_CONFIG.chiefGuest.photoPath && (
             <div className="relative group shrink-0">
-              <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-cyan-400 via-asi-red to-gold-400 opacity-80 blur-md group-hover:opacity-100 transition duration-500" />
+              <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-gold-400 via-asi-red to-gold-400 opacity-80 blur-md group-hover:opacity-100 transition duration-500" />
               <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full border-4 border-gold-400 p-1 bg-slate-900 shadow-[0_0_30px_rgba(212,175,55,0.6)] overflow-hidden">
                 <img
                   src={EVENT_CONFIG.chiefGuest.photoPath}
@@ -86,13 +86,13 @@ export const Stage2Confirmation: React.FC<Props> = ({ onConfirm }) => {
       {/* Main Ceremonial Touch Button [ INAUGURATE NOW ] */}
       <div className="relative group mt-5">
         {/* Animated Radial Pulse Rings */}
-        <div className="absolute -inset-6 rounded-3xl bg-gradient-to-r from-cyan-400 via-teal-300 to-blue-500 blur-2xl opacity-95 animate-pulse" />
+        <div className="absolute -inset-6 rounded-3xl bg-gradient-to-r from-gold-400 via-amber-300 to-gold-400 blur-2xl opacity-90 animate-pulse" />
 
         <button
           onClick={handleClick}
           onTouchStart={handleClick}
           disabled={isPressed}
-          className="relative flex items-center justify-center space-x-4 px-16 py-7 sm:px-24 sm:py-8 rounded-2xl bg-gradient-to-r from-cyan-400 via-teal-300 to-blue-500 text-slate-950 font-black border-2 border-white shadow-[0_0_60px_rgba(6,182,212,0.85)] hover:shadow-[0_0_90px_rgba(6,182,212,1)] transition-all duration-300 active:scale-95 cursor-pointer touch-target"
+          className="relative flex items-center justify-center space-x-4 px-16 py-7 sm:px-24 sm:py-8 rounded-2xl bg-gradient-to-r from-gold-300 via-amber-200 to-gold-400 text-slate-950 font-black border-2 border-white shadow-[0_0_60px_rgba(226,184,87,0.9)] hover:shadow-[0_0_90px_rgba(255,215,0,1)] transition-all duration-300 active:scale-95 cursor-pointer touch-target"
         >
           <Fingerprint className="w-8 h-8 text-slate-950 animate-bounce" />
           <span className="text-2xl sm:text-3xl font-black tracking-[0.25em] text-slate-950 uppercase">

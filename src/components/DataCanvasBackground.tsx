@@ -43,7 +43,7 @@ export const DataCanvasBackground: React.FC<Props> = ({ stage, touchRipple }) =>
         radius: 10,
         maxRadius: Math.max(window.innerWidth, window.innerHeight) * 0.6,
         alpha: 0.9,
-        color: stage === 'COUNTDOWN' ? '#E5232A' : '#06B6D4',
+        color: stage === 'COUNTDOWN' ? '#E5232A' : '#E2B857',
       });
     }
   }, [touchRipple, stage]);
@@ -67,8 +67,8 @@ export const DataCanvasBackground: React.FC<Props> = ({ stage, touchRipple }) =>
       const count = Math.floor((canvas.width * canvas.height) / 20000);
       const particles: NodeParticle[] = [];
 
-      // Refined Palette with Analytics Cyber Cyan & Tech Blue
-      const colors = ['#E5232A', '#D4AF37', '#06B6D4', '#2563EB', '#FFFFFF'];
+      // Refined Institutional Palette: ASI Crimson, Gold, Silver, White
+      const colors = ['#E5232A', '#D4AF37', '#E2B857', '#94A3B8', '#FFFFFF'];
 
       for (let i = 0; i < count; i++) {
         particles.push({
@@ -134,7 +134,7 @@ export const DataCanvasBackground: React.FC<Props> = ({ stage, touchRipple }) =>
 
           if (dist < maxDistance) {
             const lineAlpha = (1 - dist / maxDistance) * 0.12;
-            ctx.strokeStyle = `rgba(6, 182, 212, ${lineAlpha})`;
+            ctx.strokeStyle = `rgba(226, 184, 87, ${lineAlpha})`;
             ctx.lineWidth = 0.8;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);

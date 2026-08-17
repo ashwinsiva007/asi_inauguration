@@ -9,11 +9,6 @@
     --color-gold-400: #E2B857;
     --color-gold-500: #D4AF37;
     --color-slate-950: #060810;
-    
-    /* Cyber Cyan & Tech Blue for Data Analytics contrast */
-    --color-cyber-cyan: #06B6D4;
-    --color-cyber-cyan-dark: #0891B2;
-    --color-tech-blue: #2563EB;
   }
 
   body {
@@ -49,12 +44,6 @@
 
 .border-gold-400 { border-color: #E2B857; }
 .border-gold-500 { border-color: #D4AF37; }
-
-.text-cyber-cyan { color: #06B6D4; }
-.text-cyber-cyan-dark { color: #0891B2; }
-.text-tech-blue { color: #2563EB; }
-.bg-cyber-cyan { background-color: #06B6D4; }
-.border-cyber-cyan { border-color: #06B6D4; }
 
 /* Custom Keyframe Animations */
 @keyframes fadeIn {

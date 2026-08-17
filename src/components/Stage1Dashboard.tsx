@@ -41,7 +41,7 @@ export const Stage1Dashboard: React.FC<Props> = ({ onInitiate, onExplore }) => {
         animate={{ scale: [1, 1.15, 1], opacity: [0.2, 0.36, 0.2] }}
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(229,35,42,0.18) 0%, rgba(6,182,212,0.14) 40%, rgba(212,175,55,0.08) 70%, transparent 90%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(229,35,42,0.18) 0%, rgba(212,175,55,0.10) 50%, transparent 80%)' }}
       />
       <div className="absolute top-10 left-20 w-56 h-56 rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(212,175,55,0.14) 0%, transparent 70%)', filter: 'blur(32px)' }} />
@@ -66,7 +66,7 @@ export const Stage1Dashboard: React.FC<Props> = ({ onInitiate, onExplore }) => {
             <motion.div
               style={{
                 transform: `rotate(${deg}deg) translateY(-210px) rotate(-${deg}deg)`,
-                backgroundColor: i % 3 === 0 ? '#E5232A' : i % 3 === 1 ? '#06B6D4' : '#E2B857'
+                backgroundColor: i % 2 === 0 ? '#E2B857' : '#E5232A'
               }}
               animate={{ scale: [1, 1.6, 1], opacity: [0.4, 1, 0.4] }}
               transition={{ duration: 2, repeat: Infinity, delay: i * 0.4 }}
@@ -123,7 +123,7 @@ export const Stage1Dashboard: React.FC<Props> = ({ onInitiate, onExplore }) => {
             animate={{ scale: [1, 1.08, 1], opacity: [0.6, 1, 0.6] }}
             transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
             className="absolute -inset-4 rounded-2xl pointer-events-none"
-            style={{ background: 'linear-gradient(135deg, rgba(229,35,42,0.25), rgba(6,182,212,0.35), rgba(212,175,55,0.20))', filter: 'blur(18px)' }}
+            style={{ background: 'linear-gradient(135deg, rgba(229,35,42,0.3), rgba(212,175,55,0.3), rgba(229,35,42,0.3))', filter: 'blur(18px)' }}
           />
           <motion.div
             animate={{ scale: [1, 1.16, 1], opacity: [0.25, 0.55, 0.25] }}
@@ -139,8 +139,8 @@ export const Stage1Dashboard: React.FC<Props> = ({ onInitiate, onExplore }) => {
             className="relative flex items-center justify-center space-x-5 px-14 py-7 sm:px-20 sm:py-8 rounded-2xl text-white transition-all duration-300 active:scale-95 touch-target cursor-pointer"
             style={{
               background: 'linear-gradient(135deg, #0D1117 0%, #111827 50%, #0D1117 100%)',
-              border: '2px solid #06B6D4',
-              boxShadow: '0 0 40px rgba(6,182,212,0.30), inset 0 1px 0 rgba(6,182,212,0.15)',
+              border: '2px solid #E2B857',
+              boxShadow: '0 0 40px rgba(212,175,55,0.25), inset 0 1px 0 rgba(226,184,87,0.10)',
             }}
           >
             <div className="w-12 h-12 rounded-xl flex items-center justify-center"
@@ -149,7 +149,7 @@ export const Stage1Dashboard: React.FC<Props> = ({ onInitiate, onExplore }) => {
                 <Play className="w-6 h-6 fill-asi-red text-asi-red translate-x-0.5" />
               </motion.div>
             </div>
-            <span className="text-2xl sm:text-3xl font-black tracking-[0.25em] text-cyan-300 drop-shadow-[0_0_8px_rgba(6,182,212,0.5)] uppercase">
+            <span className="text-2xl sm:text-3xl font-black tracking-[0.25em] text-gold-300 uppercase">
               {isPressed ? 'INITIATING...' : 'INITIATE INAUGURATION'}
             </span>
           </button>
@@ -195,7 +195,7 @@ export const Stage1Dashboard: React.FC<Props> = ({ onInitiate, onExplore }) => {
           <motion.div
             animate={{ x: [0, -1400] }}
             transition={{ duration: 32, repeat: Infinity, ease: 'linear' }}
-            className="whitespace-nowrap text-[11px] font-mono tracking-widest text-cyan-400/80"
+            className="whitespace-nowrap text-[11px] font-mono tracking-widest text-gold-400/75"
           >
             {[...TICKER_ITEMS, ...TICKER_ITEMS, ...TICKER_ITEMS].join('    ·    ')}
           </motion.div>
