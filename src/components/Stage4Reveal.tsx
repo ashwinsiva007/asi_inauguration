@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { EVENT_CONFIG } from '../config/eventConfig';
 import { audioEngine } from '../utils/audioEngine';
-import { Sparkles, Calendar, MapPin } from 'lucide-react';
+import { Sparkles, Calendar, Award } from 'lucide-react';
 
 export const Stage4Reveal: React.FC = () => {
   useEffect(() => {
@@ -121,8 +121,8 @@ export const Stage4Reveal: React.FC = () => {
           </h4>
 
           <div className="flex items-center justify-center space-x-2 text-xs sm:text-sm font-medium text-slate-200 tracking-wider pt-1">
-            <MapPin className="w-4 h-4 text-asi-red" />
-            <span>{EVENT_CONFIG.institution}</span>
+            <Award className="w-4 h-4 text-gold-400" />
+            <span>President of the ASI</span>
           </div>
 
           <div className="flex items-center justify-center space-x-2 text-xs font-mono text-gold-400 tracking-widest pt-1">

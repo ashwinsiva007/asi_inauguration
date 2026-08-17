@@ -55,9 +55,6 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({ onReset }) => {
             <span className="text-xs font-bold tracking-wider text-slate-100 uppercase">
               {EVENT_CONFIG.institution}
             </span>
-            <span className="text-[10px] tracking-widest text-gold-400 font-mono">
-              ASI STUDENT CHAPTER CEREMONY
-            </span>
           </div>
         </div>
       </div>

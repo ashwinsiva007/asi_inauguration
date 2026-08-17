@@ -415,9 +415,6 @@ export const ExploreMode: React.FC<ExploreModeProps> = ({ onExit }) => {
               <span className="text-xs font-bold tracking-wider text-slate-100 uppercase">
                 {EVENT_CONFIG.institution}
               </span>
-              <span className="text-[10px] tracking-widest text-gold-400 font-mono">
-                ASI STUDENT CHAPTER CEREMONY
-              </span>
             </div>
           </div>
         </div>
@@ -426,7 +423,7 @@ export const ExploreMode: React.FC<ExploreModeProps> = ({ onExit }) => {
         <div className="hidden lg:flex items-center space-x-2.5 px-4 py-2 rounded-lg bg-slate-900/90 border border-slate-800/80">
           <div className="w-2 h-2 rounded-full bg-gold-400 animate-pulse" />
           <span className="text-[10px] font-mono text-slate-400 tracking-[0.2em] uppercase font-bold">
-            EXPLORE ASI PRE-EVENT MODE
+            EXPLORE ASI
           </span>
         </div>
 
