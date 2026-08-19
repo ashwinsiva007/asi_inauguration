@@ -392,8 +392,8 @@ export const SmartBoardDisplay: React.FC = () => {
 
             <div className="space-y-2">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white">SMART BOARD DISPLAY</h2>
-              <p className="text-sm text-gray-300 max-w-md mx-auto">
-                Display the quiz QR code on the main screen for 150+ students to scan effortlessly.
+              <p className="text-sm text-amber-300/90 font-medium tracking-wide max-w-md mx-auto">
+                Scan here for our ASI QUIZ ARENA
               </p>
             </div>
 
