@@ -1,4 +1,4 @@
-export type InaugurationStage = 'READY' | 'CONFIRMATION' | 'COUNTDOWN' | 'INAUGURATED' | 'EXPLORE';
+export type InaugurationStage = 'READY' | 'CONFIRMATION' | 'COUNTDOWN' | 'INAUGURATED' | 'EXPLORE' | 'QUIZ';
 
 export interface EventConfig {
   organization: string;

@@ -9,6 +9,7 @@ import { Stage3Countdown } from './components/Stage3Countdown';
 import { Stage4Reveal } from './components/Stage4Reveal';
 import { OrganizerControls } from './components/OrganizerControls';
 import { ExploreMode } from './components/ExploreMode';
+import { QuizArenaPage } from './pages/QuizArena';
 
 export function App() {
   const [stage, setStage] = useState<InaugurationStage>('READY');
@@ -18,7 +19,6 @@ export function App() {
   const triggerTouchRipple = useCallback((e: React.MouseEvent | React.TouchEvent) => {
     let x = window.innerWidth / 2;
     let y = window.innerHeight / 2;
-
     if ('touches' in e && e.touches.length > 0) {
       x = e.touches[0].clientX;
       y = e.touches[0].clientY;
@@ -54,13 +54,28 @@ export function App() {
       <DataCanvasBackground stage={stage} touchRipple={touchRipple} />
 
       {/* Top Header Navigation Bar */}
-      {stage !== 'EXPLORE' && <HeaderBar onReset={handleReset} />}
+      {stage !== 'EXPLORE' && (
+        <HeaderBar
+          onReset={handleReset}
+          onOpenQuiz={() => setStage(stage === 'QUIZ' ? 'READY' : 'QUIZ')}
+          isQuizActive={stage === 'QUIZ'}
+        />
+      )}
 
       {/* State Machine Main Container */}
       <section className="relative z-10 flex-1 w-full h-full flex flex-col justify-center items-center">
         <AnimatePresence mode="wait">
           {stage === 'READY' && (
-            <Stage1Dashboard key="stage1" onInitiate={handleInitiate} onExplore={() => setStage('EXPLORE')} />
+            <Stage1Dashboard
+              key="stage1"
+              onInitiate={handleInitiate}
+              onExplore={() => setStage('EXPLORE')}
+              onQuiz={() => setStage('QUIZ')}
+            />
+          )}
+
+          {stage === 'QUIZ' && (
+            <QuizArenaPage key="quiz" onExit={handleReset} />
           )}
 
           {stage === 'EXPLORE' && (

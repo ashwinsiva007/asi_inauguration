@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Play, Zap } from 'lucide-react';
+import { Play, Zap, QrCode } from 'lucide-react';
 import { EVENT_CONFIG } from '../config/eventConfig';
 import { audioEngine } from '../utils/audioEngine';
 
 interface Props {
   onInitiate: (e: React.MouseEvent | React.TouchEvent) => void;
   onExplore: () => void;
+  onQuiz?: () => void;
 }
 
 const TICKER_ITEMS = [
@@ -18,7 +19,7 @@ const TICKER_ITEMS = [
   '🔬 Empowering the Next Generation of Data Scientists',
 ];
 
-export const Stage1Dashboard: React.FC<Props> = ({ onInitiate, onExplore }) => {
+export const Stage1Dashboard: React.FC<Props> = ({ onInitiate, onExplore, onQuiz }) => {
   const [isPressed, setIsPressed] = useState(false);
 
   const handleClick = (e: React.MouseEvent | React.TouchEvent) => {
@@ -155,20 +156,33 @@ export const Stage1Dashboard: React.FC<Props> = ({ onInitiate, onExplore }) => {
           </button>
         </motion.div>
 
-        {/* Secondary Explore ASI Button */}
+        {/* Secondary Action Buttons Row: Explore ASI & Live Quiz */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.75, duration: 0.5 }}
-          className="mt-6 z-30 animate-pulse"
+          className="mt-6 z-30 flex flex-wrap items-center justify-center gap-3"
         >
           <button
             onClick={onExplore}
             onTouchStart={onExplore}
-            className="px-8 py-3 rounded-xl border border-slate-800/80 bg-slate-950/60 hover:bg-slate-900/80 hover:border-gold-500/40 text-slate-400 hover:text-gold-300 transition-all duration-300 font-mono text-xs tracking-[0.2em] uppercase cursor-pointer shadow-lg"
+            className="px-6 py-2.5 rounded-xl border border-slate-800/80 bg-slate-950/70 hover:bg-slate-900/90 hover:border-gold-500/40 text-slate-300 hover:text-gold-300 transition-all duration-300 font-mono text-xs tracking-[0.2em] uppercase cursor-pointer shadow-lg"
           >
             [ EXPLORE ASI ]
           </button>
+
+          {onQuiz && (
+            <button
+              onClick={onQuiz}
+              onTouchStart={onQuiz}
+              title="Launch the live quiz & Smart Board display"
+              className="group px-6 py-2.5 rounded-xl border border-asi-red/40 bg-slate-950/80 hover:bg-asi-red/15 hover:border-asi-red text-slate-200 hover:text-white transition-all duration-300 flex items-center space-x-2 font-mono text-xs tracking-[0.18em] uppercase cursor-pointer shadow-lg shadow-asi-red/10 hover:shadow-asi-red/20"
+            >
+              <QrCode className="w-3.5 h-3.5 text-asi-red group-hover:scale-110 transition-transform" />
+              <span className="font-bold text-gold-300 group-hover:text-white">LIVE QUIZ</span>
+              <span className="text-[10px] text-slate-400 font-normal hidden sm:inline">&bull; SMART BOARD</span>
+            </button>
+          )}
         </motion.div>
 
 
