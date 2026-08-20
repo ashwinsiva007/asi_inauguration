@@ -5,12 +5,10 @@ import { audioEngine } from '../utils/audioEngine';
 
 interface HeaderBarProps {
   onReset: () => void;
-  onOpenQuiz?: () => void;
-  isQuizActive?: boolean;
   showResetConfirm?: boolean;
 }
 
-export const HeaderBar: React.FC<HeaderBarProps> = ({ onReset, onOpenQuiz, isQuizActive }) => {
+export const HeaderBar: React.FC<HeaderBarProps> = ({ onReset }) => {
   const [isMuted, setIsMuted] = useState<boolean>(false);
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
 
@@ -36,10 +34,7 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({ onReset, onOpenQuiz, isQui
       {/* Left side: Crystal Clear Official ASI Logo & Real Official SIET College Emblem */}
       <div className="flex items-center space-x-5">
         {/* ASI Official Logo Badge - High Contrast & 100% Visible */}
-        <div
-          onClick={onReset}
-          className="bg-white/95 px-4 py-1.5 rounded-xl border border-slate-200 shadow-md flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity"
-        >
+        <div className="bg-white/95 px-4 py-1.5 rounded-xl border border-slate-200 shadow-md flex items-center justify-center">
           <img
             src={EVENT_CONFIG.logos.asiLogoPath}
             alt="Analytics Society of India Official Logo"
@@ -84,23 +79,8 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({ onReset, onOpenQuiz, isQui
         ))}
       </div>
 
-      {/* Right Controls: Live Quiz, Sound, Fullscreen, Hidden Reset */}
-      <div className="flex items-center space-x-3">
-        {/* Live Quiz Direct Switcher */}
-        {onOpenQuiz && (
-          <button
-            onClick={onOpenQuiz}
-            title="Open Live Quiz & Smart Board Display"
-            className={`px-3.5 py-2 rounded-lg border text-xs font-mono tracking-wider uppercase flex items-center space-x-1.5 transition-all cursor-pointer ${
-              isQuizActive
-                ? 'bg-asi-red border-asi-red text-white shadow-lg shadow-asi-red/30'
-                : 'bg-slate-900/90 border-slate-700/60 text-gold-300 hover:text-white hover:border-gold-500/50'
-            }`}
-          >
-            <span className="w-2 h-2 rounded-full bg-asi-red animate-ping mr-1" />
-            <span className="font-bold">LIVE QUIZ</span>
-          </button>
-        )}
+      {/* Right Controls: Sound, Fullscreen, Hidden Reset */}
+      <div className="flex items-center space-x-4">
 
         {/* Audio Toggle */}
         <button
