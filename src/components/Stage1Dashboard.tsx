@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Play, Zap, Music, Volume2 } from 'lucide-react';
+import { Play, Zap, Music } from 'lucide-react';
 import { EVENT_CONFIG } from '../config/eventConfig';
 import { audioEngine } from '../utils/audioEngine';
 
@@ -189,43 +189,6 @@ export const Stage1Dashboard: React.FC<Props> = ({ onInitiate, onExplore, onAudi
           </button>
         </motion.div>
       </div>
-
-      {/* Floating AUDIO Button on Left Corner */}
-      <motion.div
-        initial={{ opacity: 0, x: -30 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.85, duration: 0.6 }}
-        className="absolute bottom-14 left-6 sm:left-8 z-30"
-      >
-        <button
-          id="audio-corner-btn"
-          onClick={() => {
-            audioEngine.playTouch();
-            onAudio();
-          }}
-          onTouchStart={() => {
-            audioEngine.playTouch();
-            onAudio();
-          }}
-          title="Ceremonial Audio: Tamil Thai Vazhthu & National Anthem"
-          className="group relative flex items-center space-x-3.5 px-5 py-3.5 rounded-2xl border border-gold-500/50 bg-slate-950/85 hover:bg-slate-900 text-gold-300 hover:text-gold-100 transition-all duration-300 shadow-[0_0_25px_rgba(212,175,55,0.25)] hover:shadow-[0_0_35px_rgba(212,175,55,0.45)] cursor-pointer backdrop-blur-xl active:scale-95"
-        >
-          <div className="w-10 h-10 rounded-xl bg-gold-500/15 border border-gold-500/40 flex items-center justify-center group-hover:scale-110 transition-transform shadow-inner">
-            <Volume2 className="w-5 h-5 text-gold-400 group-hover:animate-pulse" />
-          </div>
-          <div className="flex flex-col text-left">
-            <div className="flex items-center space-x-1.5">
-              <span className="text-sm font-black font-mono tracking-[0.2em] uppercase text-gold-300 group-hover:text-gold-200">
-                AUDIO
-              </span>
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-            </div>
-            <span className="text-[11px] text-slate-300 font-sans tracking-wide">
-              Tamil Thai Vazhthu &amp; Anthem
-            </span>
-          </div>
-        </button>
-      </motion.div>
 
       {/* Live ticker */}
       <motion.div

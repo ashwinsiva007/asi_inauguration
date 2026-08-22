@@ -55,7 +55,7 @@ export function App() {
       <DataCanvasBackground stage={stage} touchRipple={touchRipple} />
 
       {/* Top Header Navigation Bar */}
-      {stage !== 'EXPLORE' && stage !== 'AUDIO' && <HeaderBar onReset={handleReset} />}
+      {stage !== 'EXPLORE' && <HeaderBar onReset={handleReset} />}
 
       {/* State Machine Main Container */}
       <section className="relative z-10 flex-1 w-full h-full flex flex-col justify-center items-center">

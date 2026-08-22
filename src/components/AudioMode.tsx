@@ -12,8 +12,7 @@ import {
   FileAudio,
   Trash2,
   Radio,
-  Sparkles,
-  Info
+  Sparkles
 } from 'lucide-react';
 import { EVENT_CONFIG } from '../config/eventConfig';
 import { audioEngine } from '../utils/audioEngine';
@@ -36,7 +35,6 @@ interface AudioTrackState {
   badgeColor: string;
   accentColor: string;
   author: string;
-  description: string;
   defaultPath: string;
   fileInfo: StoredTrackInfo | null;
   objectUrl: string | null;
@@ -52,22 +50,20 @@ const INITIAL_TRACKS: Record<'tamil_thai_vazhthu' | 'national_anthem', Omit<Audi
     id: 'tamil_thai_vazhthu',
     title: 'Tamil Thai Vazhthu',
     nativeTitle: 'தமிழ்த்தாய் வாழ்த்து',
-    category: 'State Invocation Anthem · Ceremony Opening',
+    category: 'State Invocation Anthem',
     badgeColor: 'border-gold-500/40 text-gold-400 bg-gold-500/10',
     accentColor: '#E2B857',
     author: 'Manonmaniam Sundaram Pillai',
-    description: 'Official invocatory hymn rendered at the auspicious commencement of academic functions in Tamil Nadu.',
     defaultPath: '/assets/audio/tamil-thai-vazhthu.mp3',
   },
   national_anthem: {
     id: 'national_anthem',
     title: 'National Anthem of India',
-    nativeTitle: 'जन गण मन · Jana Gana Mana',
-    category: 'National Anthem · Ceremony Conclusion',
+    nativeTitle: 'Jana Gana Mana',
+    category: 'National Anthem',
     badgeColor: 'border-asi-red/40 text-red-400 bg-asi-red/10',
     accentColor: '#E5232A',
     author: 'Rabindranath Tagore',
-    description: 'Official 52-second National Anthem of the Republic of India rendered with utmost solemnity at the conclusion.',
     defaultPath: '/assets/audio/national-anthem.mp3',
   },
 };
@@ -171,15 +167,13 @@ export const AudioMode: React.FC<AudioModeProps> = ({ onExit }) => {
     const track = tracks[id];
 
     if (!track.objectUrl && !track.defaultPath) {
-      // Synth preview if no audio available
       audioEngine.playReveal();
-      showToast(`Please upload your ${track.title} MP3 file below to play the actual recording.`, 'info');
+      showToast(`Please upload your ${track.title} MP3 file below to play.`, 'info');
       return;
     }
 
     if (currentAudio) {
       currentAudio.play().catch(() => {
-        // Fallback tone
         audioEngine.playConfirmation();
         showToast(`Ready to play: Upload your ${track.title} MP3 file below.`, 'info');
       });
@@ -227,7 +221,7 @@ export const AudioMode: React.FC<AudioModeProps> = ({ onExit }) => {
     if (!file) return;
 
     try {
-      // Save to IndexedDB
+      // Save permanently to IndexedDB
       const storedInfo = await saveAudioTrack(id, file);
       const url = URL.createObjectURL(file);
 
@@ -249,7 +243,7 @@ export const AudioMode: React.FC<AudioModeProps> = ({ onExit }) => {
       }));
 
       audioEngine.playConfirmation();
-      showToast(`Uploaded "${file.name}" for ${tracks[id].title}! Ready to play.`, 'success');
+      showToast(`Saved "${file.name}" permanently for ${tracks[id].title}!`, 'success');
     } catch (err) {
       console.error('File upload error:', err);
       showToast(`Failed to upload audio file.`, 'error');
@@ -294,7 +288,7 @@ export const AudioMode: React.FC<AudioModeProps> = ({ onExit }) => {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.4 }}
-      className="relative z-30 w-full h-[calc(100vh-5.5rem)] overflow-y-auto px-4 sm:px-8 py-6 select-none flex flex-col justify-between"
+      className="relative z-30 w-full h-[calc(100vh-5.5rem)] overflow-y-auto px-4 sm:px-8 py-4 select-none flex flex-col justify-between"
     >
       {/* Toast Notification */}
       <AnimatePresence>
@@ -320,13 +314,13 @@ export const AudioMode: React.FC<AudioModeProps> = ({ onExit }) => {
       </AnimatePresence>
 
       {/* Top Bar Navigation */}
-      <div className="flex items-center justify-between pb-6 border-b border-slate-800/80">
+      <div className="flex items-center justify-between pb-3 border-b border-slate-800/80">
         <button
           onClick={() => {
             audioEngine.playTouch();
             onExit();
           }}
-          className="flex items-center space-x-2 px-4 py-2.5 rounded-xl border border-gold-500/40 bg-slate-900/90 hover:bg-gold-500/10 text-gold-300 hover:text-gold-200 transition-all text-xs sm:text-sm font-mono tracking-wider uppercase cursor-pointer group shadow-lg"
+          className="flex items-center space-x-2 px-4 py-2 rounded-xl border border-gold-500/40 bg-slate-900/90 hover:bg-gold-500/10 text-gold-300 hover:text-gold-200 transition-all text-xs sm:text-sm font-mono tracking-wider uppercase cursor-pointer group shadow-lg"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform text-gold-400" />
           <span>Back to Inauguration</span>
@@ -343,14 +337,14 @@ export const AudioMode: React.FC<AudioModeProps> = ({ onExit }) => {
       </div>
 
       {/* Header Title Section */}
-      <div className="text-center my-4">
+      <div className="text-center my-2">
         <span className="text-xs font-mono tracking-[0.25em] text-gold-400 uppercase font-semibold">
           {EVENT_CONFIG.institution}
         </span>
-        <h1 className="text-2xl sm:text-4xl font-black tracking-wider text-white mt-1 uppercase drop-shadow-md">
+        <h1 className="text-2xl sm:text-3xl font-black tracking-wider text-white mt-0.5 uppercase drop-shadow-md">
           Ceremonial Audio Suite
         </h1>
-        <p className="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto mt-1 font-sans">
+        <p className="text-xs text-slate-400 max-w-xl mx-auto mt-0.5 font-sans">
           Official Anthems &amp; Invocations for the Analytics Society of India Student Chapter Inauguration
         </p>
       </div>
@@ -458,7 +452,7 @@ export const AudioMode: React.FC<AudioModeProps> = ({ onExit }) => {
                     {isUploaded ? (
                       <span className="flex items-center space-x-1 text-[11px] font-mono text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
                         <CheckCircle2 className="w-3 h-3" />
-                        <span>Custom Audio Ready</span>
+                        <span>Custom Audio Saved</span>
                       </span>
                     ) : (
                       <span className="flex items-center space-x-1 text-[11px] font-mono text-gold-400/80 bg-gold-950/40 px-2.5 py-0.5 rounded-full border border-gold-500/20">
@@ -476,9 +470,6 @@ export const AudioMode: React.FC<AudioModeProps> = ({ onExit }) => {
                 <div className="text-base sm:text-lg font-semibold tracking-wider text-gold-400 mt-0.5">
                   {track.nativeTitle}
                 </div>
-                <p className="text-xs text-slate-400 mt-2 line-clamp-2 leading-relaxed">
-                  {track.description}
-                </p>
               </div>
 
               {/* Audio Spectrum Waveform Visualizer (Animated) */}
@@ -636,19 +627,6 @@ export const AudioMode: React.FC<AudioModeProps> = ({ onExit }) => {
             </motion.div>
           );
         })}
-      </div>
-
-      {/* Footer Info Notice */}
-      <div className="mt-6 pt-4 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 font-mono gap-2 text-center sm:text-left">
-        <div className="flex items-center space-x-2 text-slate-400">
-          <Info className="w-4 h-4 text-gold-400 shrink-0" />
-          <span>
-            <strong>Ceremony Protocol:</strong> 1. Tamil Thai Vazhthu (Opening) → 2. Inaugurate → 3. National Anthem (Closing)
-          </span>
-        </div>
-        <span className="text-[11px] text-slate-400">
-          Uploaded MP3s are cached locally in browser for seamless demo playback.
-        </span>
       </div>
     </motion.div>
   );
