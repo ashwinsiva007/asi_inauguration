@@ -5,7 +5,6 @@ import {
   Pause,
   RotateCcw,
   Upload,
-  Music,
   ArrowLeft,
   CheckCircle2,
   AlertCircle,
@@ -452,12 +451,12 @@ export const AudioMode: React.FC<AudioModeProps> = ({ onExit }) => {
                     {isUploaded ? (
                       <span className="flex items-center space-x-1 text-[11px] font-mono text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
                         <CheckCircle2 className="w-3 h-3" />
-                        <span>Custom Audio Saved</span>
+                        <span>Custom Audio Active</span>
                       </span>
                     ) : (
-                      <span className="flex items-center space-x-1 text-[11px] font-mono text-gold-400/80 bg-gold-950/40 px-2.5 py-0.5 rounded-full border border-gold-500/20">
-                        <Music className="w-3 h-3" />
-                        <span>Ready to Play</span>
+                      <span className="flex items-center space-x-1 text-[11px] font-mono text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
+                        <CheckCircle2 className="w-3 h-3" />
+                        <span>Permanent Audio Ready</span>
                       </span>
                     )}
                   </div>
@@ -607,10 +606,19 @@ export const AudioMode: React.FC<AudioModeProps> = ({ onExit }) => {
                         🎵 {track.fileInfo.name}
                       </span>
                       <span className="text-[10px] font-mono text-slate-400">
-                        {(track.fileInfo.size / (1024 * 1024)).toFixed(2)} MB
+                        {(track.fileInfo.size / (1024 * 1024)).toFixed(2)} MB (Custom)
                       </span>
                     </div>
-                  ) : null}
+                  ) : (
+                    <div className="flex items-center justify-between text-xs bg-slate-950/70 px-3 py-2 rounded-xl border border-gold-500/20">
+                      <span className="font-mono text-gold-300 truncate max-w-[220px]">
+                        🎵 {trackId === 'tamil_thai_vazhthu' ? 'Tamil thai valzthu.mp3' : 'National Anthem.mp3'}
+                      </span>
+                      <span className="text-[10px] font-mono text-emerald-400 font-bold">
+                        {trackId === 'tamil_thai_vazhthu' ? '1.85 MB' : '2.37 MB'} · Permanent
+                      </span>
+                    </div>
+                  )}
 
                   <button
                     onClick={() => {
@@ -620,7 +628,7 @@ export const AudioMode: React.FC<AudioModeProps> = ({ onExit }) => {
                     className="w-full py-2.5 px-4 rounded-xl border border-gold-500/40 bg-gold-500/10 hover:bg-gold-500/20 text-gold-300 hover:text-gold-200 transition-all text-xs font-mono font-bold tracking-wider flex items-center justify-center space-x-2 cursor-pointer shadow-md"
                   >
                     <Upload className="w-4 h-4 text-gold-400" />
-                    <span>{isUploaded ? 'REPLACE MP3 AUDIO FILE' : `UPLOAD ${track.title.toUpperCase()} (MP3)`}</span>
+                    <span>{isUploaded ? 'REPLACE WITH NEW AUDIO FILE' : 'REPLACE / UPLOAD CUSTOM MP3'}</span>
                   </button>
                 </div>
               </div>
