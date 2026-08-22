@@ -9,6 +9,7 @@ import { Stage3Countdown } from './components/Stage3Countdown';
 import { Stage4Reveal } from './components/Stage4Reveal';
 import { OrganizerControls } from './components/OrganizerControls';
 import { ExploreMode } from './components/ExploreMode';
+import { AudioMode } from './components/AudioMode';
 
 export function App() {
   const [stage, setStage] = useState<InaugurationStage>('READY');
@@ -54,13 +55,22 @@ export function App() {
       <DataCanvasBackground stage={stage} touchRipple={touchRipple} />
 
       {/* Top Header Navigation Bar */}
-      {stage !== 'EXPLORE' && <HeaderBar onReset={handleReset} />}
+      {stage !== 'EXPLORE' && stage !== 'AUDIO' && <HeaderBar onReset={handleReset} />}
 
       {/* State Machine Main Container */}
       <section className="relative z-10 flex-1 w-full h-full flex flex-col justify-center items-center">
         <AnimatePresence mode="wait">
           {stage === 'READY' && (
-            <Stage1Dashboard key="stage1" onInitiate={handleInitiate} onExplore={() => setStage('EXPLORE')} />
+            <Stage1Dashboard
+              key="stage1"
+              onInitiate={handleInitiate}
+              onExplore={() => setStage('EXPLORE')}
+              onAudio={() => setStage('AUDIO')}
+            />
+          )}
+
+          {stage === 'AUDIO' && (
+            <AudioMode key="audio" onExit={handleReset} />
           )}
 
           {stage === 'EXPLORE' && (

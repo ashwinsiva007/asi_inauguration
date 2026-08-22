@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Play, Zap } from 'lucide-react';
+import { Play, Zap, Music, Volume2 } from 'lucide-react';
 import { EVENT_CONFIG } from '../config/eventConfig';
 import { audioEngine } from '../utils/audioEngine';
 
 interface Props {
   onInitiate: (e: React.MouseEvent | React.TouchEvent) => void;
   onExplore: () => void;
+  onAudio: () => void;
 }
 
 const TICKER_ITEMS = [
@@ -18,7 +19,7 @@ const TICKER_ITEMS = [
   '🔬 Empowering the Next Generation of Data Scientists',
 ];
 
-export const Stage1Dashboard: React.FC<Props> = ({ onInitiate, onExplore }) => {
+export const Stage1Dashboard: React.FC<Props> = ({ onInitiate, onExplore, onAudio }) => {
   const [isPressed, setIsPressed] = useState(false);
 
   const handleClick = (e: React.MouseEvent | React.TouchEvent) => {
@@ -155,24 +156,76 @@ export const Stage1Dashboard: React.FC<Props> = ({ onInitiate, onExplore }) => {
           </button>
         </motion.div>
 
-        {/* Secondary Explore ASI Button */}
+        {/* Secondary Action Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.75, duration: 0.5 }}
-          className="mt-6 z-30 animate-pulse"
+          className="mt-6 z-30 flex flex-wrap items-center justify-center gap-4"
         >
           <button
+            id="explore-asi-btn"
             onClick={onExplore}
             onTouchStart={onExplore}
-            className="px-8 py-3 rounded-xl border border-slate-800/80 bg-slate-950/60 hover:bg-slate-900/80 hover:border-gold-500/40 text-slate-400 hover:text-gold-300 transition-all duration-300 font-mono text-xs tracking-[0.2em] uppercase cursor-pointer shadow-lg"
+            className="px-7 py-3 rounded-xl border border-slate-800/80 bg-slate-950/70 hover:bg-slate-900/90 hover:border-gold-500/40 text-slate-300 hover:text-gold-300 transition-all duration-300 font-mono text-xs tracking-[0.2em] uppercase cursor-pointer shadow-lg active:scale-95"
           >
             [ EXPLORE ASI ]
           </button>
+
+          <button
+            id="audio-center-btn"
+            onClick={() => {
+              audioEngine.playTouch();
+              onAudio();
+            }}
+            onTouchStart={() => {
+              audioEngine.playTouch();
+              onAudio();
+            }}
+            className="px-7 py-3 rounded-xl border border-gold-500/40 bg-gold-500/10 hover:bg-gold-500/20 text-gold-300 hover:text-gold-200 transition-all duration-300 font-mono text-xs font-bold tracking-[0.2em] uppercase cursor-pointer shadow-[0_0_20px_rgba(212,175,55,0.2)] flex items-center space-x-2 active:scale-95"
+          >
+            <Music className="w-4 h-4 text-gold-400 animate-bounce" />
+            <span>[ AUDIO SUITE ]</span>
+          </button>
         </motion.div>
-
-
       </div>
+
+      {/* Floating AUDIO Button on Left Corner */}
+      <motion.div
+        initial={{ opacity: 0, x: -30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.85, duration: 0.6 }}
+        className="absolute bottom-14 left-6 sm:left-8 z-30"
+      >
+        <button
+          id="audio-corner-btn"
+          onClick={() => {
+            audioEngine.playTouch();
+            onAudio();
+          }}
+          onTouchStart={() => {
+            audioEngine.playTouch();
+            onAudio();
+          }}
+          title="Ceremonial Audio: Tamil Thai Vazhthu & National Anthem"
+          className="group relative flex items-center space-x-3.5 px-5 py-3.5 rounded-2xl border border-gold-500/50 bg-slate-950/85 hover:bg-slate-900 text-gold-300 hover:text-gold-100 transition-all duration-300 shadow-[0_0_25px_rgba(212,175,55,0.25)] hover:shadow-[0_0_35px_rgba(212,175,55,0.45)] cursor-pointer backdrop-blur-xl active:scale-95"
+        >
+          <div className="w-10 h-10 rounded-xl bg-gold-500/15 border border-gold-500/40 flex items-center justify-center group-hover:scale-110 transition-transform shadow-inner">
+            <Volume2 className="w-5 h-5 text-gold-400 group-hover:animate-pulse" />
+          </div>
+          <div className="flex flex-col text-left">
+            <div className="flex items-center space-x-1.5">
+              <span className="text-sm font-black font-mono tracking-[0.2em] uppercase text-gold-300 group-hover:text-gold-200">
+                AUDIO
+              </span>
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+            </div>
+            <span className="text-[11px] text-slate-300 font-sans tracking-wide">
+              Tamil Thai Vazhthu &amp; Anthem
+            </span>
+          </div>
+        </button>
+      </motion.div>
 
       {/* Live ticker */}
       <motion.div
