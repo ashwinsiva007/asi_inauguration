@@ -440,28 +440,8 @@ export const AudioMode: React.FC<AudioModeProps> = ({ onExit }) => {
                 style={{ backgroundColor: track.accentColor }}
               />
 
-              {/* Card Header & Badges */}
+              {/* Card Header */}
               <div>
-                <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className={`px-3 py-1 rounded-full text-[10px] sm:text-xs font-mono font-bold tracking-wider border ${track.badgeColor}`}>
-                    {track.category}
-                  </span>
-
-                  <div className="flex items-center space-x-2">
-                    {isUploaded ? (
-                      <span className="flex items-center space-x-1 text-[11px] font-mono text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
-                        <CheckCircle2 className="w-3 h-3" />
-                        <span>Custom Audio Active</span>
-                      </span>
-                    ) : (
-                      <span className="flex items-center space-x-1 text-[11px] font-mono text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
-                        <CheckCircle2 className="w-3 h-3" />
-                        <span>Permanent Audio Ready</span>
-                      </span>
-                    )}
-                  </div>
-                </div>
-
                 {/* Track Titles */}
                 <h2 className="text-xl sm:text-2xl font-black tracking-wide text-white flex items-center space-x-2">
                   <span>{track.title}</span>
@@ -584,9 +564,9 @@ export const AudioMode: React.FC<AudioModeProps> = ({ onExit }) => {
                 {/* Demo MP3 Upload Box */}
                 <div className="p-4 rounded-2xl bg-slate-900/60 border border-dashed border-slate-700 hover:border-gold-500/50 transition-all flex flex-col gap-2.5">
                   <div className="flex items-center justify-between">
-                    <span className="text-[11px] font-mono text-slate-400 flex items-center space-x-1.5">
+                    <span className="text-[11px] font-mono text-slate-400 flex items-center space-x-1.5 font-bold tracking-wider">
                       <FileAudio className="w-3.5 h-3.5 text-gold-400" />
-                      <span>DEMO AUDIO FILE UPLOAD</span>
+                      <span>UPLOADED</span>
                     </span>
 
                     {isUploaded && (
